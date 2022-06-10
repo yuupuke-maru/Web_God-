@@ -1,0 +1,53 @@
+【超入門】初心者あるあるのつまづき回避！CSSをはじめてみよう（後編）【HTML・CSS コーディング】
+2020/04/21
+
+〈目次〉
+オープニング 0:00
+今回の概要 0:17
+【セレクタの記述ルール】0:59
+　・内包している要素を指定する方法 1:13
+  .クラス名
+  ♯ID名
+
+  親要素　子要素 {
+    color: red;
+  }
+
+　・複数指定の方法 2:33
+  div p, div a {
+    font-size: 16px;
+  }
+
+　・タグ名・クラス名・ID名の複数の条件指定の方法 3:47
+  <div id="sample" class="sample red"></div>
+
+  <p class="text"></p>
+  <p class="text red"></p>
+
+　・要点まとめ 6:17
+【Webブラウザの検証ツール】 8:32
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ここにタイトル</title>
+  <meta name="description" content="サイトの説明です">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>CSSを始めてみよう</h1>
+
+  <div id="sample">
+    <div>
+      <h2></h2>
+      <p></p>
+      <p class="red">これも赤です</p>
+    </div>
+  </div>
+
+</body>
+</html>

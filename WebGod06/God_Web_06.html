@@ -1,0 +1,136 @@
+超入門】CSSプロパティ「display」が使いこなせない方へ！10分攻略【HTML・CSS コーディング】
+2020/05/15
+
+
+＜目次＞
+・オープニング 0:00
+・今回の概要 0:32
+・プロパティ「display」とは 0:48
+  CSSで要素の表示形式を指定するときに使う
+  要素を横に並べたり、高さや幅を指定したいときにプロパティ「display」に適切な値を指定していないと思い通りの配置にならないことがある
+
+・設定できる値の種類 1:16
+  使用頻度の高いもの
+  「inline」「block」「inline-block」
+
+・インライン要素とブロック要素 1:31
+HTMLタグの多くが「インライン要素」と「ブロックレベル要素」のどちらかに分類されている。
+インライン要素：文章の一部
+例) <img>,<span>
+
+ブロックレベル要素：文章を囲ういつの塊
+例） <h1>,<p>,<div>
+
+  ブロックレベル要素にインライン要素を含む決まりになっているが逆はできない。
+
+  「プロパティdisplay」
+
+  プロパティ「display」にはhtmlタグごとにそれぞれ決まった初期値がある。これがインライン要素とブロックレベル要素の分類に関係してくる
+  
+  htmlタグがインライン要素→プロパティ「display」の初期値が「inline」となっていて、ブロックレベル要素であればプロパティ「display」の初期値は「block」となっている
+
+  ですが、特定の要素に対してプロパティ「display」の値を設定しなおすと変えることができる
+
+
+・「inline」について 3:14
+  文字列と同じような配置でノートの罫線上に並んでいくようなイメージの要素
+  高さの指定もできず、横幅は中に含まれる文字数によって決まる。＜span＞、＜img＞
+
+・「block」について 4:04
+  横幅の大きさは文字数によって決まっておらず、ディスプレイの端から端まで横いっぱいに広がった状態になる要素
+  縦幅も自由に設定できる
+  <h1>,<div>,<p>
+
+・「inline」と「block」の違い 4:43
+要素を連続して並べたときに横並びになるものが「inline」,
+縦並びになるものが「block」.
+また要素に自由な幅を指定できるかどうかの違い
+
+・「inline-block」とは何なのか？ 4:58
+  「inline」と「block」のいいとこどりをした状態
+  「inline」のように要素は横並び、「block」のように高さや幅を自由に設定できる
+
+・「inline」は不自由が多い 5:20
+  高さ、幅の指定ができない、余白指定「padding」「margin」は左右にしか効かない
+
+・「block」にできないこと 5:48
+  横並びにできない。
+
+・「block」にできないことの例 5:59
+横幅に短い数値を指定しても縦並びに並ぶ。
+
+・「inline-block」にできること 7:20
+    文字と同じように扱えるのでtext-align: senter;で要素を中央よせにして表示できる
+
+・「inline」「block」「inline-block」の使い分け 7:41
+「inline」
+    display: inlineからblockやinline-blockへの変更はあるがわざわざinlineへ変更して使うことはほぼない
+
+「block」
+    細かい要素たちをひとまとまりに覆うように使う
+    すっきりとしたデザインになる
+    領域をはみ出したくない
+
+「inline-block」
+    要素の細かい配置やデザインの調整を行うときに指定する。　
+    画面を分割してタイル状に並べる
+    背景色をつけてボタンのような要素作って横に並べる
+    サイトメニューなど
+
+・プロパティ「display」の初期設定値についてのまとめ 9:35
+・今回のまとめ 10:27
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ここにタイトル</title>
+  <meta name="description" content="サイトの説明です">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>CSSを始めてみよう</h1>
+
+  <p><span>これはＯＫ</span></p>
+  <span><p>これはNG</p></span>
+  
+<span class="part">display: inline</span>
+<span class="part">display: inline</span>
+<span class="part">display: inline</span>
+
+<br>
+<br>
+<br>
+
+<div class="box">
+  display: block
+</div>
+<div class="box">
+  display: block
+</div>
+<div class="box">
+  display: block
+</div>
+
+<br>
+<br>
+<br>
+
+<span class="part1">display: inline-block</span>
+<span class="part1">display: inline-block</span>
+<span class="part1">display: inline-block</span>
+<span class="part1">display: inline-block</span>
+
+<br>
+<br>
+
+<div class="tag">
+  <p>HOME</p>
+  <p>ABOUT</p>
+  <p>MAIN</p>
+  <p>BLOG</p>
+  <p>CONTACT</p>
+</div>
+
+</body>
+</html>

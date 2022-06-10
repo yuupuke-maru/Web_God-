@@ -1,0 +1,68 @@
+【超入門】知らなきゃマズイ！HTML・CSS 基本の「き」【HTML・CSS コーディング】
+2020/04/09
+
+〈目次〉
+・オープニング 0:00
+
+・今回の概要 0:15
+・学習環境の準備 0:40
+  エディタを準備しよう
+    おすすめは「Atom」
+
+・ローカル環境って？ 2:00
+  インターネットにつながっていない環境
+
+・HTMLとCSSって何？ 2:53
+  HTML:ホームページの土台・文章構造
+  CSS:HTMLを装飾する
+
+・試しにはじめてみよう 4:23
+
+・【HTML】基本構造とタグ 5:52
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">  /* 文字コードを指定 */
+    <title>ここにタイトル</title>
+    <meta name="description" content="サイトの説明です">
+    <!-- Webサイトの説明を「content="~"」の部分に書き込む -->
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+
+    ここに本文
+
+  </body>
+</html>
+
+・【CSS】基本構造とルール 11:10
+
+@charset 'utf8';
+
+a{
+  color: red;
+}
+
+
+・【CSS】HTMLに読み込む方法 12:39
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">  /* 文字コードを指定 */
+    <title>ここにタイトル</title>
+    <meta name="description" content="サイトの説明です">
+    <!-- Webサイトの説明を「content="~"」の部分に書き込む -->
+    <link rel="stylesheet" href="styles.css">
+    <style>
+      a{
+        color: red;
+      }   
+    </style>
+
+  </head>
+  <body>
+
+    ここに本文
+
+  </body>
+</html>

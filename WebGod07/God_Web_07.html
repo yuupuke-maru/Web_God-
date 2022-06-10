@@ -1,0 +1,78 @@
+【超入門】「イライラリンク」になってない？aタグの正しい使い方【HTML・CSS コーディング
+2020/05/20
+
+
+＜目次＞
+・オープニング 0:00
+・今回の概要 0:36
+①＜a＞タグの性質を理解しよう 0:48
+  <a href="ここにURL">リンク</a>
+  要素やリンクを張れるタグ
+  display初期値はinline
+
+②うまく押せない！イライラリンク回避法 1:36
+  リンクが押しにくいのは、テキストにだけリンクがあり、周りのボックスにはリンクがないとき
+  これは
+  <li><a href="ここにURL">リンク先</a></li>
+  のように<a>タグが中に含まれているときに起こる
+
+  解決法
+  <a>タグに対してCSSで「display:block;」を指定する
+    これによってaタグの余白を自由に設定できるようになる
+
+③リンクを別タブで開く 4:26
+<a href="外部リンク" target="_blank">外部サイトにリンク</a>
+「target="_blank"」を記載するだけで新しいタブでリンクを開いてくれる
+
+
+・今回のまとめ 6:05
+aタグでリンクを設置した場合は領域が狭く押しずらいイライラリンクになっていないか
+外部のサイトへリンクさせる時はaタグに「target="_blank"」の記述を加えて別タブで開けるようにしておきましょう
+
+ホームページの記述が終わった後は、ユーザー目線で動作確認しましょう。
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ここにタイトル</title>
+  <meta name="description" content="サイトの説明です">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>CSSを始めてみよう</h1>
+
+  <a href="ここにURL">リンク</a><br>
+  <br>
+  <a href="外部リンク" target="_blank">外部サイトにリンク</a>
+
+<br>
+<h2>メニュータグ（リンク=テキスト部）</h2>
+<br>
+<ul class="menu">
+  <li><a href="">HOME</a></li>
+  <li><a href="">ABOUT</a></li>
+  <li><a href="">MAIN</a></li>
+  <li><a href="">BLOG</a></li>
+  <li><a href="">CONTACT</a></li>
+</ul>
+<br>
+<br>
+<h2>メニュータグ(リンク＝ブロック部)</h2>
+<br>
+
+<!--liタグのpaddingをaタグに指定してあげると
+  aタグのテキストの外側へ余白を広げてブロックいっぱいにhover対応領域が広がりクリックしやすくなる -->
+<ul class="menu2">
+  <li><a href="">HOME</a></li>
+  <li><a href="">ABOUT</a></li>
+  <li><a href="">MAIN</a></li>
+  <li><a href="">BLOG</a></li>
+  <li><a href="">CONTACT</a></li>
+</ul>
+
+
+</body>
+</html>
