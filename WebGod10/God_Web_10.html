@@ -1,0 +1,118 @@
+【超入門】もうCSSの真ん中寄せで悩まない！横向き編【HTML・CSS コーディング】
+2020/06/12
+
+CSSの真ん中寄せ、うまくいかなかった経験は誰にでもあるのでは？
+横向き、縦向き、それぞれの場合で真ん中寄せをマスターするための動画を前編・後編に分けてお送りします。
+今回は「横向き編」です！
+
+＜目次＞
+・オープニング 0:00
+・今回の概要 0:42
+・①テキスト・画像の中央揃え 1:15
+  テキストと画像はインライン要素
+  「text-align: center;」をつかうのだが
+  テキストに対しては<p>テキスト</p>を
+  <p style="text-align:center;">テキスト</p>
+  とすれば中央ぞろえになる
+
+  しかし画像<p><img src="image.png" alt="画像"></p>では
+  imgタグにstyleを書くのではなく親要素のpタグに
+  <p　style="text-align:center;"><img src="image.png" alt="画像"></p>
+
+  「text-align: center;」は指定した要素が真ん中に移動する刷毛ではなく、指定した要素の中身が真ん中に移動するイメージ
+
+
+・②インライン要素の場合 3:36
+  テキスト、画像以外のinline要素またはdisplayプロパティにinline,inline-blockが指定してある要素のこと
+
+  真ん中寄せにしたい要素がインライン要素の場合はその親要素に「text-align: center;」を指定してあげればいい。
+
+
+・②インライン要素の場合【番外編】 5:38
+  インライン要素自体にだけ「text-align: left;」を指定してあげればいい。
+
+・③ブロックレベル要素の場合 6:21
+  ブロックレベル要素の場合は中央寄せにしたい要素そのものに指定をする。
+  「margin: 0 auto;」で指定。上下方向の余白を「0」、左右方向の余白を「auto」つまり左右の余白を自動で均等にしてという指示。
+
+・まとめ「真ん中寄せチェックシート」 8:07
+  x <img>タグに直接「text-align: center;」を指定している
+    →「text-align: center;」は親要素に指定する
+  
+  x displayプロパティの初期値が「inline」の要素に直接「text-align: center;」を指定している
+    →「text-align: center;」は親要素に指定する
+
+  x 真ん中寄せに七要素に「display:block;」を指定している
+    →間違い「text-align: center;」は効かない
+    「margin: 0 auto;」もしくは「display:inline-block;」を指定する
+
+  x真ん中寄せにしたい要素のdisplayプロパティの初期値が「block」である（pタグ、divタグなど）
+    →「text-align: center;」は効かないので、「margin: 0 auto;」もしくは「display: inline-block」＆親要素に「text-align: center;」
+
+  x真ん中寄せにしたい要素に「display:inline-block;」と「text-align: center;」を指定する
+    → 「text-align: center;」は親要素に指定する
+
+  x真ん中寄せにしたい要素の、すぐ上の親要素に「text-align: center;」以外が指定してある
+    →すぐ上の指定の方が強いので「text-align: center;」を指定した要素が外側すぎると、内側の指定に打ち消されて効果がない
+
+・今回のまとめ 11:07
+  要素を真ん中寄せにできるプロパティとその値は・・・
+  「text-align: center;」もしくは「margin: o auto;」を使う
+
+  要素のdisplayプロパティの値によってどちらを指定するか見分ける
+  ・inline/inline-block・・「text-align: center;」
+  ・block・・・「margin :0 auto;」
+
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ここにタイトル</title>
+  <meta name="description" content="サイトの説明です">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>CSSを始めてみよう</h1>
+
+  <div>
+    <p style="text-align:center;">テキスト</p>
+
+    <p style="text-align:center;">
+      <img src="image.png" alt="画像">
+    </p>
+  </div>
+  
+  <div style="text-align:center;">
+    <div style="
+    display:inline-block;
+    background: blue;
+    padding: 20px;
+    width: 500px;
+    ">これを真ん中に寄せにしたい</div>
+  </div>
+<br>
+<p>番外編</p>
+
+  <div style="text-align:center;">
+    <div style="
+    text-align:left;
+    display:inline-block;
+    background: blue;
+    padding: 20px;
+    width: 500px;
+    ">ブロックは真ん中に寄せにし、テキストは左寄せ</div>
+  </div>
+<br>
+<p>ブロックレベル要素</p>
+
+  <div style="">
+    <div style="
+    margin: 0 auto;
+    background: rgb(255, 251, 0);
+    padding: 20px;
+    width: 500px;
+    ">ブロックレベル要素です</div>
+  </div>
+</body>
+</html>

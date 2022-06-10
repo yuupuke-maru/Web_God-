@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+【超入門】もうCSSの真ん中寄せで悩まない！縦向き編【HTML・CSS コーディング】
+2020/06/20
+
+
+CSSの真ん中寄せ、うまくいかなかった経験は誰にでもあるのでは？
+横向き、縦向き、それぞれの場合で真ん中寄せをマスターするための動画を前編・後編に分けてお送りします。
+今回は「縦向き編」です！
+<meta charset="UTF-8">
+<title>ここにタイトル</title>
+<meta name="description" content="サイトの説明です">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>CSSを始めてみよう</h1>
+＜目次＞<br>
+・オープニング 0:00 <br>
+・今回の概要 0:41 <br>
+・①テキストを要素の真ん中にしたいとき 1:11 <br>
+  縦方向に中央揃えしたいとき<br>
+
+　▶︎line-heightプロパティを使う場合 1:25 <br>
+    メニューやボタンのデザイン等によく使う方法 <br>
+    h1,h2などのタイトル行の装飾、テーブル要素にも使える <br>
+    <div class="menu1">
+      <ul style="
+      display: flex;
+      flex-wrap: nowrap;
+      ">
+        <li>メニュー1</li>
+        <li>メニュー2</li>
+        <li>メニュー3</li>
+        <li>メニュー4</li>
+      </ul>
+    </div>
+
+    「line-height」プロパティはテキストが大きくなるのではなく行間が大きくなるプロパティ。<br>
+
+    「heightプロパティ」と「LIne-heightプロパティ」を同じ大きさにすることで自ずとテキストが要素の高さの真ん中に来る。<br>
+
+    注意!!<br>
+    テキストが2行以上になると使えない。 <br>
+
+　▶︎上下に同じ大きさの余白を指定する 2:57 <br>
+    「height」プロパティを使用せず <br>
+    <br>
+<br>
+    <div class="menu2">
+      <ul style="
+      display: flex;
+      flex-wrap: nowrap;
+      ">
+        <li>メニュー1</li>
+        <li>メニュー2</li>
+        <li>メニュー3</li>
+        <li>メニュー4</li>
+      </ul>
+    </div>
+<br>
+・②複数のインライン要素を中央揃えにしたいとき 3:16 <br>
+    初期値がinlineまたはdisplayプロパティがinline、inline-blockの時 <br>
+    <br>
+    「vertical-align: middle;」を使う <br>
+    要素の上下方向の揃え位置を指定するプロパティ <br>
+    縦方向に揃えたいすべてのプロパティ要素自体に指定しなくてはならない <br>
+    <br>
+    <div class="aicon" style="
+    display: flex;
+    
+    ">
+      <p style="vertical-align: middle;">テキスト</p>
+      <img style="vertical-align: middle;" src="image.png" alt="画像">
+      <p style="
+      vertical-align: middle;
+      line-height:50px;
+      background: chartreuse;
+      ">ちょっと高いテキスト</p>
+    </div>
+<br>
+<br>
+・③要素を画面、または親要素の真ん中に配置したいとき 5:42 <br>
+<br>
+主に真ん中にしたい要素がブロックレベル要素であるときこの方法を使う
+<br>
+<br>
+　　▶︎絶対配置を使う場合 6:13 <br>
+<br>
+「position」プロパティで絶対配置によって要素を真ん中の位置に揃える。  <br>
+縦方向、横方向いっぺんに指定できる <br>
+「position: absolute;」 <br> 
+「top:50%;」 <br>
+「trasform: taranslateY(-50%);」 <br>
+この３行を指定しただけでは、画面全体の中央に位置してしまうので、特定の親要素に対して「position: relative;」を指定してあげる必要がある <br>
+ 
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<div style="position:relative">
+  <div class="box" style=" 
+  position:absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  ">ブロックレベル要素
+  </div>
+
+  <div>
+    <!-- 縦横真ん中寄せにしたい場合は以下のように設定しよう -->
+    <!-- <div class="box" style=" 
+  position:absolute;
+  top: 50%;
+  left: 50%; 
+  transform: translate(-50%,-50%);
+  ">ブロックレベル要素2
+  </div> -->
+  </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<br>
+　　▶︎flex-box を使う場合 8:37 <br>
+<br>
+前提<br>
+この範囲で真ん中寄せしたいという基準の要素に高さが指定してあること <br>
+<br>
+Flexboxでの真ん中寄せ（縦横）
+「display: flex;」 <br>
+「align-items: center;」 <br>
+「justify-content: center」 <br>
+
+
+
+<br>
+<div class="area" 
+style="
+height: 200px; background-color: blueviolet; display: flex; align-items:center; justify-content: center"
+>
+  <div>ブロックレベル要素BOX</div>
+</div>
+<br>
+<br>
+「position: absolute;」や「display: flex;」はブロックレベル要素にwidthプロパティを指定していないと縮まってしまうことがある。<br>
+なので親要素を引き継ぎたければ「width: 100%;」のプロパティを加えるとよい。<br>
+<br>
+<br>
+
+・今回のまとめ 11:16 <br>
+<br>
+要素の縦方向に真ん中寄せは、状況によって方法を見定める必要がある。　<br>
+→ テキストだけを真ん中寄せにしたい？ <br>
+真ん中に配置した伊野はインライン要素？ブロック要素？など   <br>
+<li>テキスト要素を真ん中に・・・heightの値 = line-heightの値</li>
+<li>複数の要素を中央揃えに・・・「vertical-align: middle;」</li>
+<li>上記の対処ではできないとき・・・絶対配置またはFlexbox</li>
+
+
+
+<br>
+・おまけ 12:02
+<br>
+
+
+
+
+
+
+</body>
+</html>
