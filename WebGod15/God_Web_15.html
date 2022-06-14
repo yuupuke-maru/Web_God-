@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>【超入門】初心者必見！模写コーディングをやってみた 実践編 Part2【HTML・CSS コーディング】</title>
+  <meta name="description" content="サイトの説明です">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>【超入門】初心者必見！模写コーディングをやってみた 実践編 Part2【HTML・CSS コーディング】</h1>
+  2020/07/26 <br>
+
+  HTML/CSSの学習で定番の学習方法、「模写コーディング」のやり方、練習するときのポイントをまとめました下記の動画をもとに、実際に模写コーディングに取り組む動画の第2弾です！<br>
+今回は字幕なしと、作業中のカットも少なめでお送りしています。ご不明な点がございましたら、お気軽にご質問ください！<br>
+<br>
+＜目次＞
+<br>
+・オープニング 0:00
+<br>
+・オススメの手順のおさらい 1:32
+<br>
+・模写コーディング実況
+<br>
+↓今回参考にしたサイト↓
+<br>
+模写サイト：「Web Design:Template-Party＆Girl-Staff」<br>
+https://template-party.com/index.html より<br>
+https://template-party.com/template/tp_biz35/tp_biz35_black/
+<br>
+「HTML5 Doctor Reset CSS」<br>
+http://html5doctor.com/html-5-reset-s...
+<br>
+①サイト選び 1:48
+<br>
+<p>スライド下の本文に当たるところから模写コーディング</p>
+<br>
+②スクリーンショットを撮る 2:41
+<br>
+<br>
+③テキストを抽出する 3:28
+<br>
+<br>
+④画像を抽出する 4:18
+<br>
+「image downloader」を使えばそのページに使われている画像がわかる。<br>
+注意 <br>
+たまに検索にひっからない画像があるので注意。
+<br>
+<br>
+⑤HTML編集 6:42
+<br>
+<p>日付を示すタグ</p>
+<dl>
+  <dd>
+    <time>2020/06/13</time>
+  </dd>
+</dl>
+
+<br>
+<p>お困りのコピーライト表記</p>
+<footer>
+  <p><small>copyright© Sample Company All Rights Reserved.</small></p>
+</footer>
+<br>
+<br>
+<p>section:見出しと本文の構造になっている部分を囲うタグ</p>
+<section>
+  <h2>見出し
+    <p>本文</p>
+  </h2>
+</section>
+
+<br>
+<p>divタグごとにclassやIDをつける<br>
+divタグの閉じタグにコメントでclassやID名の記載することで見やすいコードになる</p>
+<br>
+⑥CSS編集 17:11
+<ul>
+  <li>まずbodyタグの文字コードが違うと見た目が変わるので文字コードだけコピー（font-family）</li>
+  <li>大きい塊で考えて行く。今回は「div class="container"」「#main」「#sidebar」の３ブロックの大体の配置、幅を指定。</li>
+  <li>floatを使って２カラムの配置を作っていく（昔は大体この方法。今は、「Grid Layout」「flex-box」の流れ。ただ基本を学んでおこう。）</li>
+  <li>overflow:hidden : floatを使ったと時の要素の高さを出すのによく使う</li>
+  <li>backgroundのプロパティのまとめ方</li>
+  <p>background-color: black;
+    background-image: url(images/mark1.png);
+    background-position: left;
+    background-repeat: no-repeat;
+    <br>
+    →
+    <br>
+    background: black url(images/mark1.png) no-repeat left;</p>
+    <li>バックグラウンドのグラデーション<br>
+    background: linear-gradient(#FFF, #ebebeb);</li>
+
+</ul>
+
+<br>
+<br>
+⑦運命の答え合わせ 1:16:48
+<br>
+<p>マークアップもほぼ同じ、2カラム設定もフロート、dt,ddもフロート・ただ日付部分は（margin）（padding）で指定。
+</p>
+<br>
+・今回のまとめ 1:21:59
+<br>
+<ul>
+  <li>２カラムのレイアウト→「float」「flexbox」など<br>
+  しっていれば思いつくけど、知らないものは思い浮かばない。<br>わからないときは潔くお手本コードをみましょう。</li>
+  <li>同じスタイルが共通して繰り返し使われている箇所には、できるだけシンプルなコードで一括指定できるとよし。<br>
+  （今回の例・・・#main h2, #main h3, .bg-grayなどの共通スタイル）</li>
+
+
+</ul>
+
+
+</body>
+</html>

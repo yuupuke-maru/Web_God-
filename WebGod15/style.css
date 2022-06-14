@@ -1,11 +1,8 @@
-@charset "utf8"
-
-/* ここからリセットCSS */
-/* 
+/*
 html5doctor.com Reset Stylesheet
 v1.6.1
 Last Updated: 2010-09-17
-Author: Richard Clark - http://richclarkdesign.com 
+Author: Richard Clark - http://richclarkdesign.com
 Twitter: @rich_clark
 */
 
@@ -18,93 +15,251 @@ b, i,
 dl, dt, dd, ol, ul, li,
 fieldset, form, label, legend,
 table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, figcaption, figure, 
+article, aside, canvas, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section, summary,
 time, mark, audio, video {
-  margin:0;
-  padding:0;
-  border:0;
-  outline:0;
-  font-size:100%;
-  vertical-align:baseline;
-  background:transparent;
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
 }
 
 body {
-  line-height:1;
+    line-height:1;
 }
 
 article,aside,details,figcaption,figure,
-footer,header,hgroup,menu,nav,section { 
-  display:block;
+footer,header,hgroup,menu,nav,section {
+    display:block;
 }
 
 nav ul {
-  list-style:none;
+    list-style:none;
 }
 
 blockquote, q {
-  quotes:none;
+    quotes:none;
 }
 
 blockquote:before, blockquote:after,
 q:before, q:after {
-  content:'';
-  content:none;
+    content:'';
+    content:none;
 }
 
 a {
-  margin:0;
-  padding:0;
-  font-size:100%;
-  vertical-align:baseline;
-  background:transparent;
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
 }
 
 /* change colours to suit your needs */
 ins {
-  background-color:#ff9;
-  color:#000;
-  text-decoration:none;
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
 }
 
 /* change colours to suit your needs */
 mark {
-  background-color:#ff9;
-  color:#000; 
-  font-style:italic;
-  font-weight:bold;
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
 }
 
 del {
-  text-decoration: line-through;
+    text-decoration: line-through;
 }
 
 abbr[title], dfn[title] {
-  border-bottom:1px dotted;
-  cursor:help;
+    border-bottom:1px dotted;
+    cursor:help;
 }
 
 table {
-  border-collapse:collapse;
-  border-spacing:0;
+    border-collapse:collapse;
+    border-spacing:0;
 }
 
 /* change border colour to suit your needs */
 hr {
-  display:block;
-  height:1px;
-  border:0;   
-  border-top:1px solid #cccccc;
-  margin:1em 0;
-  padding:0;
+    display:block;
+    height:1px;
+    border:0;  
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
 }
 
 input, select {
-  vertical-align:middle;
+    vertical-align:middle;
 }
-/* ここまでリセットCSS */
+
+/* ここから記載 */
 
 
-/* ここから記述 */
+body {
+    font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
 
+.container {
+    width:100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    overflow: hidden;
+    line-height: 2em;
+    font-size: 14px;
+}
+
+#main {
+
+    width: 73%;
+    float: right;
+    padding-bottom: 95px;
+
+
+}
+
+#main h2 {
+    height: 38px;
+    line-height: 38px;
+
+    padding-left: 35px;
+    margin: 15px 0;
+    background: black url(images/mark1.png) no-repeat left 10px center;
+    color: #fff;
+}
+
+#main h3 {
+    height: 36px;
+    line-height: 36px;
+    border: #ccc solid 1px;
+    margin: 15px 0;
+    padding:0 15px;
+
+    background: linear-gradient(#FFF, #ebebeb);
+    color: black;
+}
+
+#main h4 {
+    padding: 0 15px;
+    font-weight: bold;
+    margin-top: 15px;
+}
+
+#main p {
+
+    padding: 0 15px;
+}
+
+#main a {
+    color: #000;
+}
+    
+
+.news {
+    height: 150px;
+    overflow-y: scroll;
+    margin-left: 15px;
+}
+
+.new {
+    background: #ed462f;
+    color: white;
+    font-size: 10px;
+    padding: 0 4px;
+    border-radius: 3px;
+}
+
+.news dt {
+    display: inline-block;
+    font-size: 13px;
+    font-weight: bold;
+    line-height: 2em;
+    width: 14%;
+    min-width: 100px;
+    border-bottom: 1px solid #ccc;
+}
+
+.news dd {
+    display: inline-block;
+    font-size: 13px;
+    width: 86%;
+    border-bottom: 1px solid #ccc;
+}
+
+#sidebar {
+    width: 23%;
+    float: left;
+    list-style: none;
+
+}
+
+#sidebar ul {
+
+    list-style: none;
+
+}
+
+#sidebar ul li {
+    height: 32px;
+
+    background: #fff;
+    line-height: 32px;
+    border-bottom: 1px solid #ccc;
+
+}
+
+#sidebar ul li a {
+    display: block;
+    padding-left: 12px;
+    color: #000;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+#sidebar ul a:hover {
+    background: #000;
+    color: #fff;
+
+}
+
+#sidebar ul li:last-child {
+    border: none;
+}
+
+.box {
+    margin: 15px 0;
+}
+
+.bg-gray {
+    background: #E4E4E4;
+    padding: 20px 15px;
+    border: 1px solid #ccc;
+    
+}
+
+.box h2 {
+    border-left: 3px solid;
+    padding-left: 12px;
+    margin-bottom: 18px;
+    line-height: 1em;
+}
+
+footer {
+
+    text-align: center;
+    background: #000;
+    color: white;
+    line-height: 2em;
+    font-size: 12px;
+}
+footer small {
+    font-size: 14px;
+}
