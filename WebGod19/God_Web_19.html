@@ -1,0 +1,203 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ここにタイトル</title>
+  <meta name="description" content="サイトの説明です">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>【超入門】Flexboxを30分で完全習得！初心者向け【HTML・CSS コーディング】</h1>
+  <p>2020/09/19</p>
+
+  <P>※※※内容訂正のご案内※※※</P>
+
+<p>動画内「align-items」解説時（10:44）のスライド画像と、「align-content」解説時（12:05）のスライド画像が編集時のミスで逆のものになってしまっております。
+下記より、スライド画像をまとめたpdfファイルをご覧いただけますので、こちらも併せて動画をご視聴いただけますと幸いです。大変失礼いたしました！</p>
+<a>https://webgodweb.com/flexbox/flexbox...</a>
+
+<h2>レイアウト調整を簡単、簡潔にする超便利なFlexbox！</h2>
+<p>なんとなく使っている、イマイチ使い方がわからない…そんな皆さんに向けて、Flexboxを完全解説しました！</p>
+
+<p>＜目次＞</p>
+<ul>
+<li>オープニング 0:00</li>
+<br>
+<li>Flexboxとは？ 0:47</li>
+<br>
+<p>レイアウト調整が簡単にできる、便利なCSS機能。<br>
+  要素の並び方や配置を柔軟に操ることができる。<br>
+  対応するプロパティ群を指定することで使える。<br>
+</p>
+<br>
+<li>Flexboxはどういう時に使う？ 1:50</li>
+<br>
+<p>Flexboxでできること</p>
+<ul>
+  <ol>要素の並び順を変える</ol>
+  <ol>要素の折り返し型を決める</ol>
+  <ol>要素の配置を決める</ol>
+  <ol>要素の幅や高さを自由自在に指定する</ol>
+</ul>
+<p>
+htmlをほとんど変更せずに簡潔なCSSの指定のみで多様なレイアウトを可能にしてくれる。 <br>
+特にレスポンシブルデザインの時に便利。
+</p>
+<br>
+<li>Flexboxの使い方 3:20</li>
+<br>
+<p>使い方</p>
+<ul>
+  <ol>「親要素＞子要素」の構造になっているときに使う。</ol>
+  <ol>親要素に書き指定<br>
+  「display :flex;」・・・親要素がブロックレベル要素<br>
+  「display :inline-flex;」・・・親要素がインライン要素
+</ol>
+</ul>
+<br>
+<li>Flexboxのプロパティ 4:41</li>
+<br>
+<p>Flexboxのそれぞれのプロパティには「初期値」というものがあり、親要素に「display :flex;」、「display :inline-flex;」を指定した時に効いているスタイルのこと。</p>
+<div>
+  <ul>
+  <h2>Flexboxのプロパティ（親要素に指定するもの)</h2>
+    <div>
+      <li>「flex-direction」</li>
+      <p>親要素の赤で、子要素が並ぶ向きを指定</p>
+      <img src="images/flex-direction 5m13s].png" alt="画像">
+      <p>
+        「Flexbox」における「主軸」と「交差軸」とは？<br>
+        「主軸」・・・要素が横に並んでいく方向の軸のこと。<br>
+        「交差軸」・・・主軸の垂直方向に当たる軸<br>
+        <br>
+        例)rowは左→右と横方向が主軸、縦方向に行が追加されるので交差軸は縦方向。<br>
+          columnは上から下へ要素が並ぶので縦方向が主軸、横方向が交差軸<br>
+      <br>
+      このように主軸と交差軸を縦と横で入れ替えている
+      </p>
+      <br>
+    </div>
+
+    <div>
+      <li>「Flex-wrap」</li>
+      <p>親要素の中での、子要素の折り返し方を指定します。</p>
+      <img src="images/flex-wrap.png" alt="画像">
+      <p>
+        初期値「nowrap」だと折り返さずに画面いっぱいに子要素が並ぶので、折り返ししない場合はwrapプロパティの指定をまず疑い「wrap」に指定。
+      </p>
+      <br>
+    </div>
+
+    <div>
+      <li>「Flex-flow」</li>
+      <p>flex-directionとflex-wrapを一括指定します。</p>
+      <img src="images/flex-flow.png" alt="画像">
+      <p>
+        このプロパティで簡略化できる。
+      </p>
+      <br>
+    </div>
+  </ul>
+  <h2>Flexboxのプロパティ（子要素の配置の仕方を決めるプロパティ)</h2>
+
+  <div>
+    <li>「justify-content」</li>
+    <p>主軸の水平方向における、子要素の揃え方を指定します。</p>
+    <img src="images/justify-content.png" alt="画像">
+    <p>
+      「flex-start」,「flex-end」,「center」は「text-alignプロパティ」と同じような使い方をするイメージ。<br>
+      <br>
+      「space-between」:2カラム、3カラムのレイアウトを作るのに便利。<br>
+    </p>
+    <br>
+  </div>
+
+  <div>
+    <li>「align-items」</li>
+    <p>主軸の垂直方向に置ける、1行あたりの子要素の揃え方を指定します</p>
+    <img src="images/align-items.png" alt="画像">
+    <p>
+      もしレイアウト崩れに困ったときは・・・<br>
+      align-itemsを初期値「stretch」以外に設定し、子要素に横幅、高さを指定。
+    </p>
+    <br>
+  </div>
+
+  <div>
+    <li>「align-content」</li>
+    <p>主軸の垂直方向に置ける、複数行の時の子要素の揃え方を指定します</p>
+    <img src="images/align-content.png" alt="画像">
+    <p>
+      複数行がどのように揃うかを指定できる。親要素にも高さが指定されていて子要素にも高さがある場合に効きます。
+      flex-wrap:wrap;,flex-wrap :wrap-reverse;のように折り返しが発生する時（つまり複数行）にしか使えない。　
+    </p>
+    <br>
+    <p>flex-direction: column;やflex-direction: column-reverse;が指定してあるときの考え方</p>
+    <img src="images/flex-direction_column .png" alt="画像">
+  </div>
+</ul>
+</div>
+
+<li>Flexboxのプロパティ（親要素に指定するもの）のまとめ 14:48</li>
+<p>
+  flexboxを使いたいとき<br>
+  親要素がブロックライン要素なら「display: flex;」<br>
+  親要素がインライン要素なら「display: inline-flex;」<br>
+  <br>
+</p>
+<p>
+  「flex-direction」:主軸、交差軸を入れ替える。要素の並ぶ方向が交わる。
+</p>
+<P>
+  「flex-wrap」:要素の折り返しを設定する。
+</p>
+<p>justify-content:主軸と水平方向の子要素の揃え方</p>
+<p>align-items:主軸と水平方向の子要素の揃え方（1行当たりの子要素の並び方）</p>
+<p>align-content:主軸と垂直方向の子要素の揃え方（複数の行の、親要素の中での配置の仕方）</p>
+<br>
+<li>Flexboxのプロパティ（子要素に指定するもの）15:57</li>
+<br>
+<div>
+  <p>align-self:主軸の垂直方向における、1行当たりの子要素の揃え方を個別指定します。</p>
+  <img src="images/align-self.png" alt="画像">
+  <p>親要素に指定できる「align-items」と同じ調整ができるが、「align-self」は子要素に指定でき、個別に指定できる。
+  </p>
+  <br>
+</div>
+
+<div>
+  <p>order:子要素の並び順を指定します。</p>
+  <p>親要素の中にある複数の子要素に対し「数字」を指定し、並び順を変える。
+  </p>
+  <p>orderの値による並び順<br>
+  負の数 → 0=orderを指定していない要素 → 正の数</p>
+  <br>
+</div>
+
+<div>
+  <p>flex:親要素の中での、子要素の比率を指定します。</p>
+  <img src="images/flex.png" alt="画像">
+  <p>親要素の中にある複数の子要素に対し「数字」を指定し親要素の横幅を基準に、どのような比率で幅を決めるかを指定できるプロパティ。
+  </p>
+  <p>また、一部のプロパティの横幅を設定し、flexプロパティを指定した子要素に残りの横幅を割り当てるような使い方もできる。
+  </p>
+  <img src="images/flex2.png" alt="画像">
+  <img src="images/flex3.png" alt="画像">
+  <br>
+  <p>flexは3つのプロパティを一括指定しているプロパティ<br>
+  「flex-grow」:子要素の伸び率（余白の分配）を指定する。<br>
+  「flex-shrink」:子要素の縮み率（余剰の分配）を指定する。<br>
+  「flex-basis」:子要素の幅を指定します。<br>
+</p>
+</div>
+<li>エンディング 28:16</li>
+<br>
+<li>今回のまとめ 28:36</li>
+  <br>
+  <p>
+    Flexboxでは親要素に指定するプロパティと、子要素に指定するプロパティを使いこなすことで、簡単、簡潔にレイアウト調整ができる。
+  </p>
+  <img src="images/flexbox_ex.png" alt="画像">
+</ul>
+
+</body>
+</html>

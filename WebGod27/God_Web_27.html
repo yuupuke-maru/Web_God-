@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ここにタイトル</title>
+  <meta name="description" content="サイトの説明です">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>【超入門】初心者必見！10分でわかるFlexbox講座【HTML・CSS コーディング】</h1>
+<p>2021/02/13</p>
+
+<P>Flexbox難しい…覚えることが多すぎて大変！という方に向けて、
+たった10分でFlexboxを使いこなせるように、機能や使い方を厳選して紹介します！</P>
+
+<p>＜目次＞</p>
+<p>・オープニング 0:00​</p>
+<p>・最低限覚えておきたいプロパティ4つ0:54</p>
+
+<ul>
+  <ol>display: flex;</ol>
+  <ol>flex-wrap :wrap;</ol>
+  <ol>justify-contentプロパティ</ol>
+  <ol>align-itemsプロパティ </ol>
+</ul>
+
+<p>①display: flex;1:35</p>
+<p>
+  これがないと始まらない。<br>
+  横ならびにしたい要素のすぐ上の親要素に指定する
+</p>
+
+<div class="container c01">
+  <div class="item">1つめの要素です。1つめの要素です。1つめの要素です。1つめの要素です。</div>
+  <div class="item" style="background: #19f;">2つめの要素です。2つめの要素です。2つめの要素です。</div>
+  <div class="item">3つめの要素です。3つめの要素です。3つめの要素です。3つめの要素です。3つめの要素です。</div>
+  <div class="item" style="background: #19f;">4つめの要素です。</div>
+  <div class="item">５つめの要素です</div>
+</div>
+
+<p>②flex-wrap: wrap;2:34</p>
+<p>
+  要素を折り返しさせたい場合は、必ず指定する。
+  これを指定しないとすべての要素が無理やり一列に並ぶ 
+</p>
+
+<div class="container c02">
+  <div class="item">1</div>
+  <div class="item" style="background: #19f;">2</div>
+  <div class="item">3</div>
+  <div class="item" style="background: #19f;">4</div>
+  <div class="item">5</div>
+</div>
+
+<p>③justify-contentプロパティ4:31</p>
+<p>要素の横方向の揃え方を指定する。（左、右、中央寄せ）Flexboxを使わないときのtext-alignプロパティの使い方に近い</p>
+
+<div class="container c03">
+  <div class="item">1</div>
+  <div class="item" style="background: #19f;">2</div>
+  <div class="item">3</div>
+</div>
+
+<p>④align-itemsプロパティ5:09</p>
+<p>要素尾縦方向の揃え方(上、下、中央揃え)を指定する。Flexboxを使わないときのvertical-alignプロパティの使い方に近い。</p>
+
+<div class="container c04">
+  <div class="item">1</div>
+  <div class="item" style="background: #19f
+  ;">2</div>
+  <div class="item" style="height: 150px;">3</div>
+  <div class="item"style="background: #19f;">4</div>
+  <div class="item">5</div>
+</div>
+
+<p>・覚えておきたい注意点　6:35</p>
+<h2>【番外編】Flexboxを使うと時のポイント</h2>
+<p>・横並びになるそれぞれの要素に横幅を指定する</p>
+
+
+<div class="container c05">
+  <div class="item">1つめの要素です。1つめの要素です。1つめの要素です。1つめの要素です。</div>
+  <div class="item" style="background: #19f;">2つめの要素です。2つめの要素です。</div>
+</div>
+
+<p>横幅を指定していないと、横幅の大きさは中の要素に左右されるので、サイズが思い通りにならない。<br>
+widthプロパティでpxや%指定しよう</p>
+<br>
+<br>
+
+<p>justify-content(要素の横方向の揃え方)は、親要素の中に隙間がないときは効かない<br>
+今は親要素が800px子要素が200px3の600pxだから指定は効くが、もう1つ子要素が増えると800pxになってしまうので、左右中央寄せを指定しても見た目は変わらなくなってしまう。</p>
+
+<div class="container c06">
+  <div class="item">1</div>
+  <div class="item" 
+  style="background: #19f
+  ;">2</div>
+  <div class="item">3</div>
+</div>
+
+<p>
+  便利でよく使う指定。<br>
+  「justify-content: space-between:」<br>
+  ・・・両端の要素を端に揃えて、残りの余白を当分配する。</p>
+
+<p>・今回のまとめ　10:38</p>
+<p>
+  Flexboxは要素を横並びにするときに活用！saiteigenn
+  覚える4つ<br>
+  1,「display: flex;」
+  2,「flex-wrap: wrap;」
+  3,「justify-contentプロパティ」
+  4,「align-itemsプロパティ」
+  <br>
+  ・1~4を指定するのは、横並びにした要素を覆うすぐ上の親要素。
+  <br>
+  ・中身の要素に横幅を指定するのを忘れないよう注意。
+</p>
+
+
+</body>
+</html>

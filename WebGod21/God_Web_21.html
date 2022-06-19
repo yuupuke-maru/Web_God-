@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ここにタイトル</title>
+  <meta name="description" content="サイトの説明です">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>【超入門】何となく使ってない？ボックスモデル＆box-sizingプロパティ完全理解への道！【HTML・CSS コーディング】</h1>
+  <p>2020/11/01</p>
+<p>CSSのボックスモデル、「box-sizing: border-box;」など…ちゃんと理解できてますか？
+  30分で、ボックスモデルのあれこれを完全解説しました！</p>
+  <br>
+  <P>＜目次＞</P>
+<ol>
+  <li>オープニング　0:00​</li>
+  <li>はじめに　0:46</li>
+  <li>ボックスって何？　1:04</li>
+  <br>
+  <p>HTML要素は、どの要素も「ボックス」と呼ばれる四角形の領域を持っている。</p>
+  <br>
+  <li>ブロックボックスとインラインボックスの違いは？displayプロパティの役割って？1:25
+  </li>
+  <p>ボックスには2種類<br>
+    ブロックボックス/インラインボックス<br>
+    それぞれ配置する時の動き方など、特性が異なる。
+  </p>
+  <br>
+  <p>
+    ボックスの性質の違い１<br>
+    幅と高さを指定できるか？<br>
+    ブロックボックスは幅高さの指定ができるが、インラインボックスは中の要素に左右されるので、幅や高さの指定はできない。
+  </p>
+<br>
+<p>
+  ボックスの性質の違い２<br>
+  改行して表示されるか?<br>
+  ブロックボックスは横幅いっぱいを確保してしまうので、余白があっても、横並びにならない。（つまり改行されてしまう）
+  <br>
+  インラインボックスは要素で横幅が決まるため、横幅一杯になるまで横に並べて表示する。横幅一杯になったら改行される。
+</p>
+<br>
+<p>
+  displayプロパティの値とボックスの種類<br>
+  「display: block;」→ ブロックボックス<br>
+  「display: inline;」→インラインボックス<br>
+  例)「display: block;」なのでブロックボックス<br>
+  ブロックボックスとして表示されるので、要素に幅と高さを指定できる、必ず改行して縦に並ぶ<br>
+
+</p>
+<br>
+<p>
+displayプロパティはどのようなボックスを生成するかを決めるプロパティ
+</p>
+<br>
+  <li>・ボックスモデルとは？　5:19</li>
+  <br>
+  <p>
+    cssにおいて、要素の１つ１つはボックス構造に基づいた4つの領域で構成されているという考え方。（要素の中身、余白、境界線）
+  </p>
+  <img src="images/box_model.png" alt="画像">
+  <p>
+    boxは内側から「content-box」,「padding-box」,「border-box」,「margin-box」となっている。
+  </p>
+  <div>
+    <ul>
+      <li>「content-box」</li>
+      <p>
+        要素の中身を表示するボックス。要素の指定をしなければ、要素の中身（テキストや画像など）を基準とする。
+      </p>
+      <li>「padding-box」</li>
+      <p>
+        要素に背景色を指定したり、要素の一部としての余白をつける。<br>
+        要素本体はどこまで？<br>
+        「コンテントボックス」~「ボーダーボックス」までの領域が要素本体になる。（背景色がつく領域がここまで）
+      </p>
+      <li>「border-box」</li>
+      <p>
+        「パディングボックス」と「マージンボックス」の境界線の領域。<br>
+        またボーダーボックスも要素の一部とし要素本体に含まれる。<br>
+      </p>
+      <li>「margin-box」</li>
+      <p>
+        要素本体の領域には含まれない、隣の要素との配置、余白を設定するのにつかう。<br>
+        マージンの相殺<br>
+        ブロックボックスの要素が縦方向に並んでいる場合、どちらかのmarginプロパティのうち、大きい値が採用されて余白が空く。<br>
+        ※「display :inline;」,「display :inline-block;」では起こらない
+      </p>
+    </ul>
+  </div>
+<br>
+  <li>box-sizingプロパティとは？　14:39</li>
+  <br>
+  <p>
+    box-sizingプロパティとは？<br>
+    要素の幅と高さをどのように計算するかを設定する。<br>
+    設定できる値は2種類のみ<br>
+    「content-box（初期値）」/「border-box」<br>
+  </p>
+  <p>
+    「box-sizing: content-box;(初期値)」<br>
+    widthプロパティ、heightプロパティで決められるのは「コンテントボックス」の領域である。<br>
+  </p>
+  p>
+    「box-sizing: border-box;」<br>
+    widthプロパティ、heightプロパティで決められるのは「ボーダーボックス」の領域である。<br>
+  </p>
+  <br>
+  <li>box-sizing: border-box; の活用について 20:41</li>
+  <p>デバイスの横幅いっぱいに（width=100%）指定した場合、</p>
+
+<ul>
+  <p>box-sizing: content;について　15:56</p>
+  <li>box-sizing :content-box;(初期値)</li>
+  <div class="box" style="
+  width: 100%;
+  padding :20px;
+  border: 5px solid #333;
+  background: #6ff;
+  ">
+    box-sizing :content-box;(初期値)
+  </div>
+  <br>
+  <li>box-sizing :content-box;(初期値) <br>
+    (calc関数を使って調整)
+  </li>
+  <div class="box" style="
+  width: calc(100%-2*(20px-5px));
+  padding :20px;
+  border: 5px solid #333;
+  background: #6ff;
+  ">box-sizing :content-box;(初期値) <br>
+    (calc関数を使って調整)</div>
+    <br>
+  <p>box-sizing: border-box;について　17:18</p>
+  <li>box-sizing :border-box;</li>
+  <div class="box" style="
+  width: 100%;
+  padding :20px;
+  border: 5px solid #333;
+  background: #6ff;
+  ">
+    box-sizing :border-box;
+  </div>
+  <p>paddingやborderの大きさを変更しても表示が崩れたりせずに自動で調整してくれるので便利。</p>
+</ul>
+<br>
+  <li>まとめ　25:29</li>
+  <img src="images/box_model1.png" alt="画像">
+  <p>
+    ボックスモデルのイメージがすぐにできるようにしましょう。
+  </p>
+  <img src="images/box_sizing.png" alt="画像">
+  <p>
+    widthとheightの指定できるボックス部分を「コンテントボックス」、「ボーダーボックス」と変えられる
+  </p>
+</ol>
+
+</body>
+</html>

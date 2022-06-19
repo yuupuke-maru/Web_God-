@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ここにタイトル</title>
+  <meta name="description" content="サイトの説明です">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>【超入門】初心者向け レスポンシブデザイン完全攻略！メディアクエリ等解説【HTML・CSS コーディング】</h1>
+  <p><time>2020/08/16</time></p>
+
+  <p>レスポンシブデザインとは？具体的にどうやるの？など初心者向けに徹底解説しました！<br>
+  メディアクエリの使い方を覚えて、レスポンシブコーディングを身に着けましょう！</p>
+  
+  <P>＜目次＞</P>
+  <ul>
+    <li>オープニング 0:00</li>
+    <li>レスポンシブウェブデザインって何？　0:37</li>
+    <br>
+    <p>PC,スマホ、タブレットなど色々なデバイスでの閲覧を想定して、効率的にWebサイトの表示切り替えを行う手法のこと</p>
+    <br>
+    <li>メディアクエリとは　2:05</li>
+    <p>メディアクエリとは<br>
+    サイトで表示している画面環境などを判定し、条件指定ができるＣＳＳ機能。媒体（ディスプレイ、プリンターなど）や表示デバイスの画面サイズを判別できる。</p>
+    <br>
+    <P>画面サイズによって表示機能を変える機能は「メディアクエリ」というCSSの機能によって実装されている</P>
+    <br>
+    <li>実際に指定してみよう！</li>
+    <p>メディアクエリを設定するには次の2つを設定。</p>
+    <ol>①viewportの設定2:35</ol>
+    <p>htmlの「headタグ」に「<meta name="viewport" content="width=device-width, initial-scale=1.0">」を記述</p>
+    <ol>②条件指定　2:59</ol>
+    <p>具体的な条件の指定を「CSS」に記述する</p><br>
+    <li>メディアクエリの条件指定</li>
+    <p>@media screen and (min-width: 768px) {
+      body {
+        background-color :red;
+        }
+      }
+      <br>
+      この場合媒体が「screen（一般的なディスプレイ）」で「画面サイズが768px以上」の時背景を「red(赤)」で表示
+    </p>
+    <p>
+      媒体指定は「all」,「screen」「print」の３通り。<br>
+      ただし、「screen」と「print」で表示方法を変えなければいけないとき以外は記載しなくてもOK 。<br>
+    </p>
+<br>
+<p>
+  画面サイズでの条件指定<br>
+  <li>768px以上の画面幅に効かせたい場合＝CSSが効く範囲の、最小値を指定</li><br>
+  @media (min-width: 768px;) {
+    h1 {
+      font-size: 10px;
+    }
+  }
+<br>
+<li>768px以下の画面幅に効かせたい場合＝CSSが効く範囲の、最大値を指定</li>
+@media (max-width: 768px;) {
+  h1 {
+    font-size: 10px;
+  }
+}
+<br>
+<li>768px~1199pxの範囲の画面幅に効かせたい場合＝CSSが効く範囲の、最小値が768px最大値が1199px</li>
+@media (min-width: 768px;) and (max-width: 1199px;) {
+  h1 {
+    font-size: 10px;
+  }
+}
+<br>
+</p>
+
+  </ul>
+  <ul>
+    <li>ブレイクポイントについて　6:54</li>
+    <p>最小値や最大値に指定する画面幅の値を「ブレイクポイントという」。</p>
+    <li>PCとタブレットのブレイクポイントを「1200px」、タブレットとスマホのブレイクポイントを「768px」としたとき</li>
+    <br>
+    <p>
+      スマホ表示<br>
+      div {
+        width: 200px;
+      }
+<br>
+      タブレット表示<br>
+      @media (min-width: 768px) {
+        div {
+          width: 400px;
+        }
+      }
+<br>
+      PC表示<br>
+      @media (min-width: 1200px;) {
+        div {
+          width: 600px:
+        }
+      }
+<br>
+    </p>
+    <p>モバイルファースト、PCファーストがある。上位の例は「モバイルファースト設計」</p>
+    <li>レスポンシブコーディングをする時の手法について　10:36</li>
+    <br>
+    <ol>①パーセント指定　10:45</ol>
+    <br>
+    <p>img {
+      width: 100%;
+    }
+  </p>
+    <ol> ②「rem」での文字サイズ指定 11:39</ol>
+    <br>
+    <p>PCとスマホで異なる文字サイズを設定したいときにPXでは指定箇所が多く手間がかかる。基準となる文字サイズを「htmlタグ」に指定。基準の文字サイズに対して比率でサイズを変更していく</p>
+    <p>レスポンシブルデザインの場合はこれにメディアクエリを併用して、画面幅が一定より大きくなった場合、基準の文字サイズを大きくする設定をする</p>
+    <p>
+      ・スマホ表示
+      html {
+        font-size: 10px;
+      }
+      h1 {
+        font-size :1.2rem;
+      }
+
+      ・PC表示
+      @media (min-width: 768px:) {
+        html {
+          font-size: 20px;
+        }
+      }
+    </p>
+    <ol>③画面幅指定での要素の出し分け　13:12</ol>
+    <br>
+    <p>メディアクエリと「display :none;」を組み合わせて指定。</p>
+    <p>
+      スマホの時のみ表示させたい場合。<br>
+      ・クラス「sp_only」を用意する
+      PC表示
+      @media (min-width: 768px;) {
+        .sp_only {
+          display :none;
+        }
+      }
+    </p>
+    <p>
+      pcとスマホで特定の要素の表示、非表示を入れ替える
+      ・スマホ表示
+      .pc_only {
+        display :none;
+      }
+
+      ・PC表示
+      @media (min-width :768px;) {
+        .pc_only {
+          display :block;
+        }
+      }
+    </p>
+    <p>
+      レスポンシブコーディングの手法<br>
+      1,パーセント指定<br>
+      2,「rem」での文字サイズ指定<br>
+      3,画面幅指定での要素の出し分け<br>
+      ・その他<br>
+      Flexbox,<picture>タグで画面の出し分け<br>
+    </p>
+    <li>まとめ　15:16</li>
+    <p>
+      cssのメディアクエリで、デバイスの画面幅によって条件指定する。<br>
+      <ol>viewport指定:</ol>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <ol>画面幅指定:</ol>
+      例)@media(min-width: 768px;) {・・・}
+    </p>
+    <p>
+      メディアクエリを併用した、いろいろなレスポンシブコーディングの手法、テクニックがある。<br>
+      例)パーセント指定、rem指定、要素の出し分け、Flexboxなど
+    </p>
+  </ul>
+
+
+</body>
+</html>

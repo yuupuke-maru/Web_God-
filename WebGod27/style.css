@@ -104,3 +104,95 @@ input, select {
 }
 
 /* ここから記述 */
+
+
+.item {
+    padding: 50px 100px;
+    background: #00f;
+    color: #fff;
+}
+
+.container {
+    width: 800px;
+    padding: 10px;
+    margin: 30px 0;
+    background: #ccc;
+}
+
+div {
+background: #ff9;
+}
+
+.c01 {
+    display: flex;
+}
+
+.c01 .item {
+    width: 250px;
+    height: 100px;
+    padding: 0;
+
+}
+
+.c02 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.c02 .item {
+    width: 250px;
+    height: 100px;
+    padding: 0;
+    line-height: 100px;
+    text-align: center;
+}
+
+
+.c03 {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.c03 .item {
+    width: 250px;
+    height: 100px;
+    padding: 0;
+    line-height: 100px;
+    text-align: center;
+}
+
+.c04 {
+    display: flex;
+    align-items: flex-start;
+}
+
+.c04 .item {
+    width: 250px;
+    height: 100px;
+    padding: 0;
+    line-height: 100px;
+    text-align: center;
+}
+
+.c05 {
+    display: flex;
+}
+
+.c05 .item {
+    padding: 0;
+    text-align: center;
+}
+
+
+.c06 {
+    display: flex;
+    justify-content: center;
+}
+
+.c06 .item {
+    width: 200px;
+    height: 100px;
+    padding: 0;
+    line-height: 100px;
+    text-align: center;
+}
