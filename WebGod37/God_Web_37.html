@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ここにタイトル</title>
+  <meta name="description" content="サイトの説明です">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>【初心者向け】jQueryで作るハンバーガーメニュー3種類！スライドメニュー、フェードインなど レスポンシブデザイン【HTML・CSS コーディング】</h1>
+  <p><time>2021/05/30</time></p>
+
+  <p>jQueryではンバーガーメニューを実装する方法を、初心者向けのシンプルなもので3種類紹介します！
+初めての方も是非チャレンジしてみてください。</p>
+
+<a href="index.html" target="_blank">練習サイトページ</a>
+
+
+<h3>jQueryで実装するハンバーガーメニュー3種類</h3>
+<p>
+  jQueryでハンバーガーメニューを実装する方法を3種類、例に挙げて紹介。
+  シンプルで簡単なので、初心者向け。
+</p>
+
+<h3>ハンバーガーメニューに必要な部品</h3>
+<p>
+  「ボタン」と「メニュー本体」を用意する。<br>
+  HTML/CSSで部品を作っておいて、動きの部分だけjQueryで実装することも多い。
+</p>
+<p>
+  今回PC表示の時に現れる<nav>タグをスマホ画面の時に、ハンバーガーメニューをクリックすると＜nav＞タグが表示/非表示されるようにコードを書いていく。
+</p>
+
+<ol>
+  <li>まず、<nav>タグにID「"global_nav"」をつける。</li>
+  <li>続いてCSSに記述。今回は大きく分けて2つのスタイル調整が必要</li>
+  <h4>1,メニュー本体（nav要素）のスタイル調整</h4>
+  <p>ハンバーガーメニューの中身の見た目を作っていく。</p>
+  <h4>2,ハンバーボタンのスタイル調整</h4>
+  <p>メニューを開いているときのボタンデザインを「x」に変える。</p>
+  <li>jquery本体の読み込みを記述。</li>
+  <p> パターン1. 上からスライド
+    $("#drawer_toggle").click(function(){
+			// 	$(this).toggleClass("open");
+			// 	$("#global_nav").slideToggle();
+			// });
+  </p>
+  <p>パターン2. フェードイン
+    // $("#drawer_toggle").click(function(){
+    // 	$(this).toggleClass("open");
+    // 	$("#global_nav").fadeToggle();
+    // });
+  </p>
+  <p>
+    パターン3. 横からスライド
+    $("#drawer_toggle").click(function(){
+      $(this).toggleClass("open");
+      $("#global_nav").toggleClass("sp_open");
+    });
+  });
+  </p>
+
+
+</ol>
+
+
+<p>↓↓↓今回の動画で扱った内容の見本サイト、ソースコードはこちら↓↓↓</p>
+
+<a href="https://webgodweb.com/ex/hamburger_menu/">★見本サイト</a>
+
+<p>★ソースコード、ファイル一式のダウンロード</p>
+<a href="https://webgodweb.com/download.php?youtube=8BItmm-CQvc">ダウンロード</a>
+
+
+
+</body>
+</html>

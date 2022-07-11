@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ここにタイトル</title>
+  <meta name="description" content="サイトの説明です">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>【超入門】初心者でも安心！JavaScript学習入門（後編）処理に関する基礎知識 if文・ループ文などの仕組みを解説【Webデザイン・プログラミング】</h1>
+  <p><time>2021/09/18</time></p>
+<p>初心者向け！JavaScriptの基礎文法を解説する、入門講座の後編です🐥</p>
+<p>今回は「処理に関するもの」の基礎知識、文法について紹介します。</p>
+<br>
+<h2>JavaScript基礎入門!後編</h2>
+<h3>処理に関するもの</h3>
+<script>
+
+// 変数が特別な意味を持たない場合、もしくは変数が数字の場合は「let」を使う。
+// let x = 5;
+// if( x > 3){
+//   alert('xは3より大きいです!');
+// } else {
+//   alert('xは3より大きくないです!')
+// }
+
+// 条件式
+// 式を評価する
+
+
+// // データ型の変換
+// const num = 1;  //数値の1
+// console.log(num + ' ←これは数値の1です。');  //数値の1
+// console.log(typeof num);  //number
+
+// const str =  num.toString();  // 数値の1を文字列に変換したもの
+// console.log(str + ' ←これは数値の1を文字列に変換したものです。');  //　文字列の1
+// console.log(typeof str); // string
+
+
+</script>
+<h3>式の構造</h3>
+<p>
+  「1」や「2」は値。「+」は演算子といって、値に処理を加える記号。<br>
+  値と演算子の組み合わせが式</p>
+<h4>式を評価すると</h4>
+<p>
+  式「1 + 2」を評価すると、「3」という値になる。<br>
+  式は必ず評価されて、何かしらの値を得ることができる。  
+</p>
+<h3>すべての値は「真偽値」に変換できる</h3>
+<p>
+  ・true:「false」とみなされる値以外全部。<br>
+  ・false:数値の「0」,「-0」,文字列の「''」(空文字) <br>
+  「null」,「undefined」,「NaN」,「false」<br>
+  <br>
+  例）数値の1を文字列に変換すると'1'になる。真偽値に変換するとtrueになる。
+</p>
+<script>
+// // true
+// let x = 5;
+// if( x > 3 ){  //この式は正しい … 条件式を評価するとtrueである
+//   alert('xは3より大きいです!'); //こちらが実行される。
+// } else {
+//   alert('xは3より大きくないです!');
+// }
+
+
+// // false
+// let x = 2;
+// if( x > 3 ){  //この式は正しくない ... 条件式を評価するとfalseである
+//   alert('xは3より大きいです!');
+// } else {
+//   alert('xは3より大きくないです!'); //こちらが実行される
+// }
+
+
+// 「true か false か」で判断しないとダメなんだよ、という話
+// let x = 3;
+// if( x ){
+//   alert('この式は正しいです!');
+// } else {
+//   alert('この式は間違っています!!');
+// }
+
+
+// JavaScriptでは、数値「0」または「-0」は真偽値に変換するとfalseになる。
+// それ以外の数値はすべて、何でもかんでもtrueになる
+
+// if( 3 ){  //数値3は、真偽値に変換するとtrueになる。
+//   alert('この式は正しいです!');  //こちらが実行される。
+// } else {
+//   alert('この式は間違っています!!');
+// }
+
+
+// if( 1 + 2 ){  //式を評価した値は数値の3。3は、真偽値に変換するとtrueになる
+//   alert('この式は正しいです!');  //こちらが実行される。
+// } else {
+//   alert('この式は間違っています!!');
+// }
+
+// if文のように条件分岐させる文を制御構文、制御フローという
+
+// // if~else
+// let x = 5;
+// if( x > 3 ){
+//     alert('xは3より大きいです!');
+// } else {
+//   alert('xは3より大きくないです!');
+// }
+
+// // if文単体
+// let x = 5;
+// if( x > 3 ){
+//   alert('xは3より大きいです!'); 
+// }
+
+// // 「else if」を使ったif分の連結
+// let x = 5;
+// if( x > 3 ){  
+//   alert('xは3より大きいです!'); 
+// } else if (x === 3){  //「elseif」ではなくて「else if」
+//   alert('xは3です!');
+// } else {
+//   alert('xは3よリ小さいです!');
+// }
+
+
+</script>
+
+
+<img src="images/JavaScript「if文」.png" alt="画像">
+<br>
+<br>
+<br>
+
+<h3>ループ文（制御構文）</h3>
+
+
+<script>
+// 繰り返し同じ処理をしたいとき
+// console.log(1);
+// console.log(2);
+// console.log(3);
+// ...きりがない。めんどくさい。コードの量が膨大になる。
+
+// ＜While文＞
+// let x = 0;
+// while( x < 100 ){  //条件式の評価がtrueのうちは処理を繰り返す。
+//   x++;
+//   console.log(x);
+// }
+
+// While文の無限ループに要注意!
+// let x = 0;
+// while( x < 100 ){  //処理を繰り返しても、xの値が一生変化しない。→ xが100を超えることがない
+//   console.log(x);
+// }
+
+// let x = 0;
+// while( 3 ){  //条件式の評価がtrueのまま一生変化しない -> 処理を永遠繰り返す
+//   x++;
+//   console.log(x);
+// }
+
+
+// // ＜for文＞
+// let arrOnigiri = ['梅干し', 'ツナマヨ', '明太子'];
+
+// for(let i = 0; i < arrOnigiri.length; i++){
+//   console.log(arrOnigiri[i]);
+// }
+
+// ループ分（while文とfor文）の使い分け
+
+// 例1 … 1から100までの数字を順番にconsole出力
+// while文
+// let x = 0;
+// while(x < 100){
+//   x++;
+//   console.log(x);
+// }
+
+// // for文
+// for(let i = 1; i <= 100; i++){
+//   console.log(i);
+// }
+
+// 例２ … 配列の中身を順番にcomsole出力
+// While文
+// let arrOnigiri = ['梅干し', 'ツナマヨ', '明太子'];
+// let i = 0;
+
+// while(i < arrOnigiri.length){
+//   console.log(arrOnigiri[i]);
+//   i++;
+// }
+
+// // ＜for文＞
+// // let arrOnigiri = ['梅干し', 'ツナマヨ', '明太子'];
+
+// for(let i = 0; i < arrOnigiri.length; i++){
+//   console.log(arrOnigiri[i]);
+// }
+
+
+</script>
+
+
+
+
+
+<p>前編では、「データに関するもの」を紹介しました！</p>
+<a href="https://www.youtube.com/watch?v=7wEuRdsnBs4">【超入門】初心者でも安心！JavaScript学習入門（前編）データに関する基礎知識【Webデザイン・プログラミング】"></a>
+</body>
+</html>

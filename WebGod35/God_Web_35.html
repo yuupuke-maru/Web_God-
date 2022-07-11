@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ここにタイトル</title>
+  <meta name="description" content="サイトの説明です">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>【超初心者向け】jQuery最新版の読み込み・使い方解説2021！初めてでも簡単にアコーディオンメニューが作れるようになります【HTML・CSS コーディング】
+  </h1>
+  <p><time>2021/05/09</time></p>
+
+  <p>この動画1本で、jQuery最新版の読み込み方と、アコーディオンメニューの作り方はバッチリです！初めてjQueryに触れる…JavaScript全然わからない…という方でも安心してください。</p>
+
+  <h3>jQuery</h3>
+  <a href="https://jquery.com/">jQuery</a>
+  
+  <h3>jQuery CDN（動画で読み込んだのは最新版（3.6.0）の「minified」です。）</h3>
+  <a href="https://code.jquery.com/">jQuery CDN</a>
+  
+  <h3>「iSara」</h3>
+  <a href="https://isara.life/">「iSara」</a>
+
+
+  <h3>初めてでも安心！jQueryの使い方</h3>
+  <p>
+    jQuery最新版（3.6.0）の読み込み方法、実際にアコーディオンメニューを作っていく際の手順を一気に紹介。
+  </p>
+<ol>
+  <li>
+    はじめに<br>
+    ~jQueryって何？~
+  </li>
+  <p>JavaScriptで書かれたライブラリ。JavaScriptの機能を簡単に使えるようにした、必殺技辞典。jQueryを使うのに宣言が必要</p>
+  <br>
+  <li>はじめに
+    ～jQueryはもう要らない？～
+  </li>
+  <p>
+    Webサイト制作の現場ではまだまだ使われている技術。どのようなものかを把握して、使い方にはある程度慣れておく必要がある。
+    拡張性、メンテナンス性には最新技術には劣るので極める必要はない。
+  </p>
+<h3>jQueryを使っていこう</h3>
+<p>
+  まずは「jQuaryの公式サイト」にアクセス。
+  downlodバナーをクリックし、「CDN」というワードを探す。
+</p>
+<p>
+  CDNとは誰でも使えるようにファイルをよそのサーバーに置いて配布してくれている。
+  jQueryのファイルをダウンロードし、自分のサーバーにアップロードして使うこともできるが、CDNを活用すればURLを読み込めばjQueryが使えるようにする導入方法
+</p>
+<p>
+  まずCDNで読み込むので「jQuery CDN」の「 https://code.jquery.com 」にアクセスすると、提供されているCDNのURLが載っている。
+</p>
+<p>
+  今回は「jQuery Core」の最新版「jQuery Core 3.6.0」を使う。基本的には「minified」を使う。クリックするとコピペしてとバナーが出てくるのでコピペしてHTMLファイルに貼り付ける。
+</p>
+<p>
+  コピペしたデータは＜/body＞の直前に置く。
+  ＜Script＞タグはHTMLの読み込みの邪魔をしてしまう可能性があるので、＜/body＞の直前というのが定番。
+</p>
+<p>
+  これでjQueryの読み込みができるようになった。
+</p>
+</ol>
+
+<h3>ではjQueryのコードを書いていこう</h3>
+<p>
+  jQueryのコードを読み込む＜Script＞タグを書いていこう。
+  ＜Script＞タグは先ほどのjQueryの読み込みタグの後に書いていく。
+</p>
+<p>
+  基本的にはコードは上から順に実行されるので、jQuery本体の読み込みをした後にjQueryのコード書いていくのが無難。
+</p>
+<p>
+  jQueryのおまじないを記載。<br>
+  ＜script＞<br>
+    $(function(){  <br>
+      jQueryの命令文  <br>
+    });  <br>
+  ＜/script＞<br>
+</p>
+<p>
+  慣れないうちは「alert("クリックされたよ");」を使い、確認しながらyって以降。
+</p>
+<h3>処理を実際書いていこう</h3>
+<p>
+  クリックされると<br>
+  ①：回答文がスライドして表示・非表示が切り替わる。<br>
+  ②：下矢印マークが上矢印マークに変わる<br>
+  の二つの動作が行われる。
+</p>
+
+
+<br>
+<div class="faq">
+  <dl>
+    <dt>
+      <i class="fa fa-question-circle-o" aria-hidden="true"></i>プログラミングスキルは必要ですか？
+    </dt>
+    <dd>
+      いいえ、必要ありません。しかし、iSaraでは参加費以上の金額が稼げることを保証しています。従って、事前通話面談時点で簡単なテストを実施し・・・。
+    </dd>
+  </dl>
+</div>
+
+<h4>jQueryの機能が正しく機能していない時の確認ワンポイント</h4>
+<p>
+  まず、jQuery本体が正しく読み込めているか確認。<br>
+  検証ツールのコンソールパネルにエラー表示がないか？<br>
+</p>
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script>
+  $(function(){
+    $(".faq dt").on("click", function(){
+      //ここに処理の中身を書く
+      // $(".faq dd").slideToggle();
+      // $(this)
+      $(this).next().slideToggle();//①回答がスライドされて、表示/非表示が切り替わる
+
+      $(this).toggleClass("open");//②クリックされたら矢印の向きが変わる
+
+    })
+  });
+</script>
+
+</body>
+</html>

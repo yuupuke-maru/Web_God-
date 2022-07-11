@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ここにタイトル</title>
+  <meta name="description" content="サイトの説明です">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>【超入門】初心者でも安心！JavaScript学習入門（前編）<br>
+    データに関する基礎知識【Webデザイン・プログラミング】</h1>
+  <p><time>2021/08/28</time></p>
+
+<p>初心者向け！JavaScriptの基礎文法を解説する、入門講座の前編です🐥</p>
+<p> 今回は「データに関するもの」、次回の後編では「処理に関するもの」の基礎知識、文法について紹介します。</p>
+
+<h2>JavaScript基礎入門! 前編</h2>
+<p>
+  基礎的な文法などを解説。<br>
+  今回は「データに関するもの」と「処理に関するもの」の2つに分けて解説
+</p>
+<h3>データ型（データの種類）</h3>
+<p>
+  プログラミングの世界では、データをいくつかの種類に分けて考える。<br>
+  データの種類を正しく判別しておかないと、処理や動作がうまくいかなかったりする。
+</p>
+
+
+
+
+
+
+
+
+<p>後編はこちら！</p>
+
+<a href="https://youtu.be/UtNPgtoiZz4" target="_blank">【超入門】初心者でも安心！JavaScript学習入門（後編）処理に関する基礎知識 if文・ループ文などの仕組みを解説【Webデザイン・プログラミング】</a>
+
+<script>
+
+  // 数値（number）
+  // 文字列(string)
+  // 真偽値（boolean）
+  // オブジェクト（object）
+
+  // 数値（number）
+  // console.log(10);
+  // console.log(10 + 10);
+
+  //  // 文字列(string)
+  // console.log("Webの神様");
+  // console.log('10');
+  // console.log('10 + 10');
+
+  // // 値のデータの種類を確かめる「typeof」
+  // console.log(typeof 10);
+  // console.log(typeof (10 + 10));
+  // console.log(typeof "Webの神様");
+  // console.log(typeof '10');
+  // console.log(typeof '10 + 10');
+
+  // 「''」「""」JavaScriptではどちらも同じ挙動をするが、「''」を使うのがおすすめ
+
+   // 真偽値（boolean）
+  // console.log(true);
+  // console.log(false);
+
+  // console.log(typeof true);  //boolean
+  // console.log(typeof 'true');  //string
+
+    // オブジェクト（object）
+  // console.log({ color: '赤', size: 'M'});
+  // console.table({ color: '赤', size: 'M'});
+//   console.log(typeof { color: '赤', size: 'M'});  //object
+
+//   // { color: '赤', size: 'M'}
+
+// // // 配列-オブジェクトの一種
+// // console.log([ '赤', '青', '黄色']);
+// // console.table([ '赤', '青', '黄色']);
+// console.log(typeof [ '赤', '青', '黄色']); //object
+
+// // [ '赤', '青', '黄色']
+
+</script>
+
+<h3>「'use strict';」について</h3>
+<p>
+  厳格モード、Strictモードなどと呼ばれる状態に切り替える記述。<br>
+  エラーが出にくくなるように記述方法を厳しくチェックする。<br>
+  必ず一番最初、すべてのコードの一番上に書く。
+</p>
+<h3>変数宣言（データに名前を付ける）</h3>
+<p>
+    let  :   name  : =  'Webの神様';<br>
+  合言葉 :   変数名 :    変数の中身（データ）
+</p>
+<h3>変数宣言の合言葉「let」と「const」</h3>
+<p>
+  変数「let」は何度も中身を代入できる。
+  定数「const」は中身を何度も代入できない。
+</p>
+
+<h4>「var」という合言葉もある？</h4>
+<p>
+  「var」を使った変数宣言は、JavaScriptの古いバージョンの書き方。これからは「const」と「let」を使っていきましょう。
+</p>
+
+<script>
+
+// 'use strict';
+
+// // 変数「let」は何度も中身を代入できる。
+// let name = 'Webの神様';
+
+// name = 'YouTubeチャンネル「Webの神様」';
+
+
+// console.log(name);
+// console.log('どうも' + name + 'です。');  //10 + 10 = 20
+// console.log('どうも' + 'name' + 'です。');
+
+
+// // 定数「const」は中身を代入できない
+// const name2 ='Webの神様2'
+
+// // name2 = 'YouTube2'　と代入するとエラーが出てしまう。
+
+// console.log(name2);
+// console.log('どうも' + name2 + 'です。');  //10 + 10 = 20
+// console.log('どうも' + 'name2' + 'です。');
+
+</script>
+
+</body>
+</html>
