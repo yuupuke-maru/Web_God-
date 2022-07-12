@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ここにタイトル</title>
+  <meta name="description" content="サイトの説明です">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .btn:hover {
+      cursor: pointer;
+      cursor: hand;
+    }
+    .btn.clicked {
+      border: 2px solid red;
+      border-radius: 2px;
+      background-color: red;
+      color: #fff;
+      font-weight: bold;
+    }
+
+
+  </style>
+
+
+</head>
+<body>
+  <h1>【初心者向け】JavaScriptのメソッドを使ってみよう！DOM操作の基本解説 クリックイベントの設定・クラス操作のやり方 【プログラミング入門】</h1>
+  <p><time>2021/10/16</time></p>
+  <p>JavaScriptのメソッドについての解説と、DOM操作、よく使うメソッドの使い方の紹介です！<br>
+  イベント設置やクラス操作ができるようになれば、Webサイト制作でできることの幅も一気に広がります！</p>
+<h2>即使える!JavaScriptのメソッド紹介</h2>
+<p>
+  「console.log();」や「alert();」以外のメソッドも使ってみよう!<br>
+  メソッドの正体から、実践的な使い方まで一気に解説
+</p>
+<p>
+  メソッドは関数と同じようなもの
+</p>
+<p>
+  オブジェクトとメソッドの関係<br>
+  オブジェクトに関数を格納できる
+</p>
+<p>
+オブジェクトの中に格納した『値』のことを「プロパティ」と呼ぶ 
+オブジェクトの中に格納した『関数』のことを「メソッド」と呼ぶ
+</p>
+
+<script>
+'use stript';
+
+// オブジェクト
+// const myBlog = {
+//   title: 'JavaScript頑張るぞブログ',
+//   author: 'Webの神太郎'
+// }
+// console.log(myBlog.title);
+
+//　オブジェクトに関数を格納
+// const myBlog = {
+//   title: 'JavaScript頑張るぞブログ',
+//   author: 'Webの神太郎',
+//   addPost: () => {
+//     console.log('記事を投稿したよ!');
+//   },
+//   deletePost: () => {
+//     console.log('記事を削除したよ!');
+//   }
+// }
+
+// // プロパティを取り出す方法(値を取り出す)
+// console.log(myBlog.title);
+
+// // メソッドを取り出す方法(関数を取り出し実行する)
+// myBlog.addPost();
+
+
+</script>
+<h3>JavaScriptにあらかじめ登録されているメソッド</h3>
+
+<button class="btn" id="btn01">ここを押してね</button>
+<button class="btn" >ここを押してね</button>
+<button class="btn" >ここを押してね</button>
+
+
+<h3>addEventListener()</h3>
+<p>
+  引数として渡す関数が、functionキーワードを使った無名関数か、アロー関数かどうかで「this」の扱いに変化があるので注意。このままの形で覚えて使用するのがおすすめ。
+</p>
+<script>
+'use stript';
+
+// console.log();
+// consoleというオブジェクトからlog();メソッドを呼び出している
+
+// DOM操作・・・HTMLの要素などをオブジェクトとして扱うための仕組み
+
+// メソッドの紹介
+// IDやClass名を条件にHTML要素を取得する。
+// document.getElementById();
+// document.getElementsByClassName();
+
+// const btn01 = document.getElementById('btn01');
+// console.log(btn01);
+
+// const btn = document.getElementsByClassName('btn');
+// console.log(btn);
+// console.log(btn[0]);
+
+
+// DOM操作の例１：クリックイベントの設定
+// const btn01 = document.getElementById('btn01');
+// btn01.addEventListener('click', function() {
+//   console.log(this);
+// });
+
+// DOM操作の例2:クラス名の追加
+//クリックするとクラス名が「'clicked'」に変わりCSSの効果が効く設定。
+
+// const btn01 = document.getElementById('btn01');
+// btn01.addEventListener('click', function() {
+//   this.classList.add('clicked');
+// });
+
+
+//　DOM操作の例3:クラス名のつけ外し
+// classList.toggle：「.add()メソッド」と「.remove()メソッド」を交互に繰り返す
+
+// const btn01 = document.getElementById('btn01');
+// 一つだけの要素に対して予備出している
+// btn01.addEventListener('click', function() {
+//   this.classList.toggle('clicked');
+// });
+
+
+// 補足：イベント設定時の注意点　
+// 「.getElementsByClassName()」で同じような処理をするときは注意が必要
+// 複数の要素へのイベント設定の仕方に注意
+
+
+// クラス「btn」を持つ要素を複数個一気にまとめて取得
+// const btn = document.getElementsByClassName('btn');
+// // 複数の要素をまとめたものに対して呼び出してる・・・エラーが起こる
+// btn.addEventListener('click', function() {
+//   this.classList.toggle('clicked');
+// });
+
+// for文で複数の要素にイベントせってする方法
+// const btn = document.getElementsByClassName('btn');
+// for(let i = 0; i < btn.length; i++){
+
+//   btn[i].addEventListener('click', function() {
+//     this.classList.toggle('clicked');
+//   });
+
+// }
+
+</script>
+
+
+<h3>今回紹介したメソッドのおさらい</h3>
+<p>
+  DOM操作が便利<br>
+  メソッドの紹介<br>
+  HTML要素を取得<br>
+  document.getElementById();<br>
+  document.getElementsByClassName();<br>
+<br>
+DOM操作の例 1：HTMLにクリックイベントの設定<br>
+要素.addEventListener('click', function(){<br>
+  クリックされたらどんな処理をするかを書く<br>
+});<br>
+<br>
+DOM操作の例 2：HTMLのクラスを操作する<br>
+要素.classList.add('クラス名');<br>
+他のメソッド: remove('クラス名'); ,  toggle('クラス名');<br>
+</p>
+
+
+</body>
+</html>

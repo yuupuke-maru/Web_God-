@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ここにタイトル</title>
+  <meta name="description" content="サイトの説明です">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>【初心者向け】JavaScriptの関数の仕組み・使い方を徹底解説！<br>
+    関数宣言 / 無名関数 / アロー関数って何？【プログラミング入門】</h1>
+  <p><time>2021/09/24</time></p>
+
+  <p>
+    JavaScriptの関数について、どこよりも詳しく丁寧に解説しています！🐥<br>
+  関数宣言、無名関数、アロー関数など。。いろいろな用法・用語があってよくわからない、<br>
+  使いこなせるか不安！という初心者の方には是非ご覧いただきたいです。</p>
+
+<h3>JavaScriptの関数の基本</h3>
+<p>JavaScriptの関数の仕組みや使い方について、詳しく丁寧に解説。</p>
+<h3>関数とは</h3>
+<p>
+  JavaScriptの複数の処理を一つにまとめたり、それらをいろいろなところで繰り返し使ったりできる仕組みのこと。  <br>
+  プログラムを構成する地位様部品のようなイメージ。<br>
+  関数にはJavaScriptでもともとあるもの、自分で作るモノがある。
+</p>
+<h4>キャメルケース</h4>
+<h4>myAlert</h4>
+<p>JavaScriptでよく使われる、変数宮関数目などの命名規則。英単語を大文字にしてつなげる</p>
+
+<script>
+'use strict';
+
+// //　関数宣言
+// function myAlert() {
+//   alert('こんにちは!');
+//   alert('Webの神様です!'); 
+// }
+
+// // 関数の呼び出し
+// myAlert();
+</script>
+
+<script>
+'use strict';
+
+// // 引数
+// function myAlert(greeting) {
+//   alert(greeting);
+//   alert('Webの神様です!'); 
+// }
+// myAlert('こんばんは');
+
+// function myAlert(greeting, channelName) {
+//   alert(greeting);
+//   alert(channelName + 'です。'); 
+// }
+// myAlert('おはよ', 'Webの神様');
+
+//　引数の初期値の設定（デフォルト値）
+// function myAlert(greeting) {
+//   alert(greeting);
+//   alert('Webの神様です!'); 
+// }
+// myAlert();
+//  出力結果は「undefined」,「Webの神様です!」となる。
+
+//  初期値を設定すると
+// function myAlert(greeting = 'ヤッホー!') {
+//   alert(greeting);
+//   alert('Webの神様です!'); 
+// }
+// myAlert();
+// 出力結果が「ヤッホー!」,「Webの神様です!」となる。
+
+</script>
+
+<script>
+'use strict'
+
+// 戻り値
+
+// function myCalc(a, b){
+//   return a + b;
+// }
+// alert(myCalc(1, 2));
+
+// function myCalc(a, b){
+//   console.log(a + b);
+//   return a + b;
+// }
+// alert(myCalc(1, 2));
+
+// // 注意
+// function myCalc(a, b){
+//   return a + b;
+//   console.log(a + b);//実行されない
+// }
+// alert(myCalc(1, 2));
+//戻り値の「return」は処理を終了するという機能もあるので、記述は処理の最後に書く
+
+</script>
+
+<h3>関数宣言以外の方法</h3>
+<h3>無名関数</h3>
+<script>
+  'use strict'
+
+// // 無名関数(関数式)
+// const myAlert = function() {
+//   alert('こんにちは!');
+//   alert('これは無名関数の例です!');
+// }
+// myAlert();  //これは実行できる。
+// myAlert  //これは実行できない
+
+// 無名関数を使った書き方
+// const myCalc = function(a, b){
+//   return a + b;
+// }
+// alert(myCalc(1, 2));
+
+</script>
+<h3>関数宣言と関数式（無名関数）の付き合分け</h3>
+<p>
+  プログラムに踏み込んだ話になるので、厳密な使い分けについては割愛。
+  基本的には関数式（無名関数）を使っていこう。
+</p>
+
+<h3>アロー関数</h3>
+<p>
+  最近導入された書き方。記述が簡単で、すっきりしている。これをどんどん使っていこう。
+</p>
+<h5>アロー関数のルール</h5>
+<p>
+・引数が1つだけだったら、その引数を囲むかっこを省略できる。（引数が2つ以上の場合はかっこが必要）<br>
+・関数の中身の処理が１行だったら、波かっこと「return」キーワードを省略できる。
+</p>
+
+<script>
+  'use strict'
+
+// アロー関数
+// const myAlert = () => {
+//   alert('こんにちは!');
+//   alert('これはアロー関数の例です。');
+// }
+// myAlert();
+
+// 比べてみてみると
+
+ // 従来の無名関数（関数式）
+// const myAlert = function(message) {
+//   alert(message);
+// }
+// myAlert('こんにちは!');
+
+// // アロー関数（省略前）
+// const myAlert = (message) => {
+//   alert(message);
+// }
+// myAlert('こんにちは!');
+
+
+// // アロー関数（省略後）
+// const myAlert = message => alert(message);
+// myAlert('こんにちは!');
+
+
+// 戻り値アリの場合
+
+// 従来の無名関数（関数式）
+// const myCalc = function(a) {
+//   return a * a;
+// }
+// alert(myCalc(2));
+
+// // アロー関数（省略前）
+// const myCalc = (a) => {
+//   return a * a;
+// }
+// alert(myCalc(2));
+
+// // アロー関数（省略後）
+// const myCalc = a => a * a;
+// alert(myCalc(2));
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
