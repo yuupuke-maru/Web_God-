@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Webの神様 CSSの小技シリーズ①</title>
+    <style>
+      body {
+        margin: 30px;
+      }
+      .circle {
+        display: inline-block;
+        width: 80px;
+        height: 80px;
+        border-radius: 50%; /* ←これ */
+        background: #2d7c9f;
+      }
+      .button {
+        display: inline-block;
+        width: 200px;
+        padding: 10px;
+        border-radius: 4px;
+        background: #ef8105;
+        color: #fff;
+        font-weight: bold;
+        text-align: center;
+        text-decoration: none;
+      }
+      .button::after {
+        content: "";
+        display: inline-block;
+        width: 8px; /* 矢印の線の長さ */
+        height: 8px; /* 矢印の線の長さ */
+        border-top: 2px solid #fff; /* 矢印の線の太さと色 */
+        border-right: 2px solid #fff; /* 矢印の線の太さと色 */
+        transform: rotate(45deg); /* 回転する方向 */
+        margin-left: 5px;
+        vertical-align: 1px;
+      }
+      .triangle {
+        display: inline-block;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 40px 0 40px 60px; /* 三角形の幅と高さ */
+        border-color: transparent transparent transparent #ffc639; /* 三角形の色 */
+      }
+
+      .border + .border {
+        margin-left: 30px;
+      }
+      .border01 {
+        display: inline-block;
+        width: 80px;
+        height: 80px;
+        border-top: 50px solid #f3870d;
+        border-right: 50px solid #ffc639;
+        border-bottom: 50px solid #2d7c9f;
+        border-left: 50px solid #a9e0f3;
+      }
+      .border02 {
+        display: inline-block;
+        width: 0;
+        height: 0;
+        border-top: 50px solid #f3870d;
+        border-right: 50px solid #ffc639;
+        border-bottom: 50px solid #2d7c9f;
+        border-left: 50px solid #a9e0f3;
+      }
+      .border03 {
+        display: inline-block;
+        width: 0;
+        height: 0;
+        border-top: 50px solid #f3870d;
+        border-right: 50px solid transparent;
+        border-bottom: 50px solid #2d7c9f;
+        border-left: 50px solid #a9e0f3;
+      }
+    </style>
+  </head>
+  <body>
+    <p class="circle"></p>
+
+    <br />
+
+    <a class="button" href="#">こちらをクリック！</a>
+
+    <br />
+
+    <p class="triangle"></p>
+
+    <br />
+
+    <p class="border border01"></p>
+    <p class="border border02"></p>
+    <p class="border border03"></p>
+  </body>
+</html>

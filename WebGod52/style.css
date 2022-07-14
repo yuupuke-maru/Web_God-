@@ -1,0 +1,165 @@
+@charset "utf8"
+
+/*
+html5doctor.com Reset Stylesheet
+v1.6.1
+Last Updated: 2010-09-17
+Author: Richard Clark - http://richclarkdesign.com
+Twitter: @rich_clark
+*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+body {
+    line-height:1;
+}
+
+article,aside,details,figcaption,figure,
+footer,header,hgroup,menu,nav,section {
+    display:block;
+}
+
+nav ul {
+    list-style:none;
+}
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+/* change colours to suit your needs */
+ins {
+    background-color:#ff9;
+    color:#000;
+    text-decoration:none;
+}
+
+/* change colours to suit your needs */
+mark {
+    background-color:#ff9;
+    color:#000;
+    font-style:italic;
+    font-weight:bold;
+}
+
+del {
+    text-decoration: line-through;
+}
+
+abbr[title], dfn[title] {
+    border-bottom:1px dotted;
+    cursor:help;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+/* change border colour to suit your needs */
+hr {
+    display:block;
+    height:1px;
+    border:0;  
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+/* ここから記述 */
+
+
+/* 1.丸を作る */
+.circle {
+  display: inline-block;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: blue;
+}
+
+/* ２．くの字の矢印の作り方 */
+/* ボタン本体のCSS */
+.button {
+  display: inline-block;
+  width: 200px;
+  padding: 10px;
+  border-radius: 4px;
+  background: #ef8105;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  }
+
+  /* くの字のボタンはここから */
+.button::after {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-top: 2px solid #fff;
+    border-right: 2px solid #fff;
+    transform: rotate(45deg);
+    margin-left: 5px;
+    vertical-align: 1px;
+
+}
+/* 「content:"";」「display:inline-block;」を指定し忘れ内容に注意（擬似要素を使うとき） */
+/* 「transform:rotate(45deg);」・・・45度傾ける */
+
+
+/* 3．CSSで三角形を作る方法 */
+.triangle {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  /* ぼーだーを作るプロパティを分けて指定している */
+  border-style: solid;
+  border-width: 40px 0 40px 60px; /* 三角形の幅と高さ 上→右→下→左の順*/
+  border-color: transparent transparent transparent #ffc639; /* 三角形の色　上→右→下→左の順 */
+/* 「transparent」・・・透明の指定 */
+}
+
+
+.container {
+  display: inline-block;
+  text-align: right;
+}

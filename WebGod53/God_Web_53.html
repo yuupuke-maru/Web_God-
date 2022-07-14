@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>ここにタイトル</title>
+  <meta name="description" content="サイトの説明です">
+
+  <!-- slickのCSSの読み込み -->
+
+<!-- 1個目のCSSファイル「slick.css」
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>の部分 -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+
+
+  <!-- 2個目のCSSファイル「slick-theme.css」 見た目を整えた追加ファイル。
+  <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/> -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+
+  <!-- 自分で用意したCSSの前に記述する -->
+  <link rel="stylesheet" href="style2.css">
+
+</head>
+<body>
+  <h1>【初心者向け】jQueryプラグイン「slick」で簡単にスライダー実装！【Webデザイン・コーディング】</h1>
+  <p><time>2021/12/12</time></p>
+
+  <p>簡単に、手軽にスライダーが実装できるjQueryプラグイン「slick」の使い方、実装方法を初心者向けに詳しく紹介します！</p>
+  <p>※ 編集ミスに気づかず、HTMLファイル上のhead閉じタグ、body開始タグが抜けてしまっておりすみません！（Webブラウザが補完してくれているので、表示の上では崩れていない状態です。）</p>
+<br>
+<br>
+<h3>Slickで実装するスライダー</h3>
+<p>
+  初心者向け! jQueryプラグイン「Slick」を使って、Webサイトに簡単にスライダーを実装する方法を解説
+</p>
+<h3>「Slick」とは？</h3>
+<p>
+  Webサイトに簡単にスライダーを実装できる、jQueryのプラグイン<br>
+  １jQuery本体　　２「Slick」のCSSファイル　　３「Slick」のJSファイル<br>
+  上記の3点を読み込んで、必要なコードを数行書くだけで導入できる
+</p>
+  <a href="https://kenwheeler.github.io/slick/" target="_blank">Slick公式サイト</a>
+<p>
+  まずは公式サイトを見に行こう。<br>
+  サイトの上部にはスライダーの使用例が載っている。<br>
+  ナビゲーションメニューの「usage」から「Getting Started」へ。「Slick」導入手順が記載してあるのでこの手順通り設定していこう。
+</p>
+<h4>実装手順１　Set up your HTML markup.<br>
+  HTML編集</h4>
+<p>以下のように記述しよう</p>
+<br>
+  <!-- <div class="your-class">
+    <div>your content</div>
+    <div>your content</div>
+    <div>your content</div>
+  </div> -->
+
+<br>
+<h4>実装手順２　Move the /slick folder into your project<br>
+  Slickフォルダ（ファイル群）の準備　※今回は不要</h4>
+<p>
+  「Slick」のファイルを用意してWebサイトに読み込む
+  ※今回はSlickのファイルをダウンロードしたりアップロードしないので行わない。
+</p>
+<h4>実装手順３　Add slick.css in your ＜head＞<br>
+  SlickのCSSファイルの読み込み</h4>
+  <!-- <p>
+    1個目のCSSファイル「slick.css」は絶対読み込まなくてはいけない。
+    <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+// Add the new slick-theme.css if you want the default styling
+2個目のCSSファイル「slick-theme.css」は見た目を整えた追加ファイル。
+<link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/> -->
+  </p>
+  <h5>「slick.css」と「slick-theme.css」について</h5>
+  <p>
+    見た目が整ったスライダーを手っ取り早く実装したいなら、「slick.css」と「slick-theme.css」を両方読み込む。
+  </p>
+  <h4>CDNでのファイル読み込み</h4>
+  <p>
+    Slickの各種ファイルをダウンロードしたりアップロードしたりせずに、今回は外部サーバー（CDN）にアップされているものを読み込んで使う<br>
+    CDNファイルはナビゲーションメニューの「get it now」から「You can also use slick with the jsDelivr CDN!」の以下のコードから読み込める.<br>
+<br>
+
+<!-- CSS
+
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/> -->
+  </p>
+
+  <br>
+
+
+  <h4>実装手順３ Add slick.js before your closing ＜body＞ tag, after jQuery (requires jQuery 1.7 +)<br>
+    JSファイル、jQueryの読み込み
+  </h4>
+  <!-- <p>
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="slick/slick.min.js"></script>
+  </p> -->
+  <p> 記述する場所はbodyの閉じタグの直前、jQueryの後に書かないとうまく動作しないので注意</p>
+<br>
+<h4>CDNでjQueryを読み込む</h4>
+<p>  jQueryを読み込む<br>
+  以下からアクセスして、「jQueryの最新版」から「minified」をクリック。<br>
+  リンク先をコピーしてBody閉じタグ前にはる
+  
+<a href="https://releases.jquery.com/" target="_blank">jQuery</a>
+</p>
+<h4>CDNでJSファイルを読み込もう</h4>
+<p>
+  CDNでJSファイルを読み込む。<br>
+  
+  JS
+<!-- 
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script> -->
+</p>
+<p>
+  注意!! ハンバーガーメニューなど他の機能の追加ですでにjQueryを読み込んでいる場合はjQueryの読み込みは不要。重複すると動作がおかしくなるので気を付ける。
+</p>
+
+
+<h4>実装手順４ Initialize your slider in your script file or an inline script tag<br>
+  Slickを起動するためのコードを記述
+</h4>
+<p>
+  <!-- $(document).ready(function(){
+    $('.your-class').slick({
+      setting-name: setting-value
+    });
+  }); -->
+</p>
+<br>
+<p>
+  $(document).ready(function(){・・・});は、<br>
+  $(function(){・・・});と同じようなモノなのでどちらかが書いてあればいい。
+</p>
+<h5>ローカル環境でＣＤＮを読み高時の注意。</h5>
+<p>
+  自分のPCにあるファイル上でCDNを読み込んでエラーが出たときは、CSSやJSを読み込んでいるソース部分を「//cdn.jsdelivr.net～」を「https://cdn.jsdelivr.net～」に書き換えてみよう
+</p>
+
+
+
+
+<h4>結果　When complete, your HTML should look something like:<br>
+  手順通りやるとこのような記述になっているというサンプルコード</h4>
+  <p>
+    <!-- <html>
+  <head>
+  <title>My Now Amazing Webpage</title>
+  <link rel="stylesheet" type="text/css" href="slick/slick.css"/>
+  <link rel="stylesheet" type="text/css" href="slick/slick-theme.css"/>
+  </head>
+  <body>
+
+  <div class="your-class">
+    <div>your content</div>
+    <div>your content</div>
+    <div>your content</div>
+  </div>
+
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+  <script type="text/javascript" src="slick/slick.min.js"></script>
+
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('.your-class').slick({
+        setting-name: setting-value
+      });
+    });
+  </script>
+
+  </body>
+</html> -->
+  </p>
+  <h3>実際に実装してみよう</h3>
+
+<!-- <div id="key_visual">
+		<img src="images/img_bg.jpg" alt="トップページ画像">
+	</div> -->
+	<div id="key_visual">
+    <div class="slider">
+      <div>
+        <img src="images/img_bg01.jpg" alt="スライド画像01">
+      </div>
+      <div>
+        <img src="images/img_bg02.jpg" alt="スライド画像02">
+      </div>
+      <div>
+        <img src="images/img_bg03.jpg" alt="スライド画像03">
+      </div>
+    </div>
+	</div>
+
+	<!-- /#key_visual -->
+<br>
+<br>
+<h4>slider小技</h4>
+<p>
+  スライダーを実装したときに、ページが表示される一瞬（jQueryのSlickが読み込まれるまでの間）スライドに指定したイメージが縦並びdr表示される現象の対処。<br>
+  <br>
+  CSSに次の2つを記述<br>
+  <!-- .slider {
+    visibility: hidden;
+}
+.slider.slick-initialized {
+    visibility: visible;
+}
+-->
+「.slick-initialized」について<br>
+「slick.js」の読み込み完了後、スライダーの準備ができた状態になると、スライダー要素に対して付与されるクラス<br>
+
+  </p>
+<img src="images/Slider_checkPoint.png">
+<br>
+<br>
+<br>
+
+<h5>スライダーが画面からはみ出す原因</h5>
+<p>
+  スライダーには左右のボタンが自動で付くが、その矢印が原因。<br>
+  <!-- <button class="slick-prev slick-arrow" aria-label="Previous" type="button" style="">Previous</button> -->
+  この矢印を画面内に持ってくる。
+</p>
+
+
+<h3>Slickのオプション設定の紹介</h3>
+<ul>
+  <li>矢印（arrows）</li>
+  <p>
+    スライドの左右に矢印を表示（true）・非表示(false)させる
+    <!-- $(".slider").slick({
+
+        arrows: false
+      
+      });
+    }); -->
+  </p>
+  <li>ドット（dots）</li>
+  <p>
+    スライドの枚数に合わせて画像の下にドットが表示される。
+    <!-- $(".slider").slick({
+
+        dots: true
+      
+      });
+    }); -->
+  </p>
+  <li>自動再生</li>
+  <p>
+    スライドショーを自動で再生させる
+    <!-- $(".slider").slick({
+
+        autoplay: true
+              
+      });
+    }); -->
+  </p>
+  <li>SlidesToShow</li>
+  <p>
+    一度に表示するスライドの数を指定（この設定だと3枚）
+     <!-- $(".slider").slick({
+
+      slidesToShow: 3
+      slidesToScroll: 3
+
+      });
+    }); -->
+  </p>
+  <li>スライドのループ（infinite）</li>
+  <p>
+    最後のスライドまでスクロールしたら1枚目に戻る
+<!-- $(".slider").slick({
+
+  PC画面は4枚表示
+        slidesToShow: 4,
+        slidesToScroll: 4,
+        responsive: [
+    {
+      1024以下だと3枚表示
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 3,
+        infinite: true,
+        dots: true
+      }
+    },
+    {
+      600以下で2枚表示
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 2
+      }
+    },
+    {
+
+      400以下で1枚表示
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1
+      }
+    }
+      
+    ]
+      });
+    }); -->
+
+  </p>
+  <li>レスポンシブ設定（responsive）</li>
+  <p>
+    画面幅によってオプションの設定を変えるように指示する
+    <!-- $(".slider").slick({
+
+        responsive: 
+      
+      });
+    }); -->
+  </p>
+  <li></li>
+  <li></li>
+  <li></li>
+  
+</ul>
+
+
+
+
+
+
+
+  <a href="https://webgodweb.com/download.php?youtube=Tl9oxreo0ys">★動画のソースコードのダウンロードはこちら</a>
+  <br>
+  <a href="https://webgodweb.com/ex/slick/">★デモサイトはこちら</a>
+  <br>
+
+
+
+
+
+
+<!-- jQueryの読み込み -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+<!-- SlickのJSファイルの読み込み -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+<!-- slickを起動するためのコード -->
+  <script>
+    $(function(){
+
+      // $('.your-class').slick({
+    //   setting-name: setting-value
+    // });
+
+
+  // この記述だけでslickは動く.
+  // サンプルコードのように｛・・・｝に記述するのはオプションを利用したいとき
+      $(".slider").slick();
+
+
+
+
+    });
+  </script>
+
+</body>
+</html>
